@@ -11,15 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'Pages\HomeController@index')->name('home');
+Route::get('/home', 'Pages\HomeController@index')->name('home');
+Route::get('/about', 'Pages\AboutController@index')->name('about');
+Route::get('/projects', 'Pages\ProjectsController@index')->name('projects');
+Route::get('/blog', 'Pages\BlogController@index')->name('blog');
+Route::get('/contact', 'Pages\ContactController@index')->name('contact');
+
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
+
+// Admin routes
 Route::prefix('admin')->group(function () {
     Route::get('login', 'Auth\AdminLoginController@index')->name('admin.login');
     Route::post('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
