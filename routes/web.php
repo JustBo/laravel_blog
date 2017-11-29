@@ -11,7 +11,12 @@
 |
 */
 
+// users auth
 Auth::routes();
+Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::get('/redirect', 'Auth\SocialAuthFacebookController@redirect')->name('facebook.redirect');
+Route::get('/callback', 'Auth\SocialAuthFacebookController@callback')->name('facebook.callback');
+
 
 Route::get('/', 'Pages\HomeController@index')->name('home');
 Route::get('/home', 'Pages\HomeController@index')->name('home');
@@ -19,9 +24,6 @@ Route::get('/about', 'Pages\AboutController@index')->name('about');
 Route::get('/projects', 'Pages\ProjectsController@index')->name('projects');
 Route::get('/blog', 'Pages\BlogController@index')->name('blog');
 Route::get('/contact', 'Pages\ContactController@index')->name('contact');
-
-Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-
 
 // Admin routes
 Route::prefix('admin')->group(function () {
