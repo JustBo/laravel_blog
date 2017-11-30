@@ -1,1 +1,21 @@
-
+#main-navbar{
+  transition: background 0.5s;
+  font-size: $navbar-fontsize;
+  background-color: rgba(18, 19, 21, 0.88);
+  a{
+    color:white;
+  }
+  &.navbar-transparent{
+    background:none;
+    border:none;
+    -webkit-box-shadow: inset 0px 31px 16px 0 rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: inset 0px 31px 16px 0 rgba(0, 0, 0, 0.44);
+    box-shadow: inset 0px 31px 16px 0 rgba(0, 0, 0, 0.44);
+    a{
+      text-shadow: 0px 0px 0px #fff;
+    }
+  }
+  .navbar-nav li:hover{
+    background-color:#090909;
+  }
+}

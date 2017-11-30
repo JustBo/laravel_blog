@@ -979,19 +979,7 @@ module.exports = __webpack_require__(42);
 
 __webpack_require__(11);
 
-// window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-//
-// Vue.component('example', require('./components/Example.vue'));
-//
-// const app = new Vue({
-//     el: '#app'
-// });
+__webpack_require__(52);
 
 /***/ }),
 /* 11 */
@@ -31700,6 +31688,71 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar__ = __webpack_require__(53);
+
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export navbar */
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Navbar = function () {
+  function Navbar() {
+    _classCallCheck(this, Navbar);
+
+    this.bar = $('#main-navbar');
+    this.transparentClass = 'navbar-transparent';
+  }
+
+  _createClass(Navbar, [{
+    key: 'installBar',
+    value: function installBar() {
+      ;
+      this.bar.addClass(this.transparentClass);
+      this.installEvents();
+    }
+  }, {
+    key: 'installEvents',
+    value: function installEvents() {
+      var that = this;
+      $(window).on('scroll', function (e) {
+        if (window.scrollY > that.bar.height()) {
+          that.bar.removeClass(that.transparentClass);
+        } else {
+          that.bar.addClass(that.transparentClass);
+        }
+      });
+    }
+  }]);
+
+  return Navbar;
+}();
+
+var navbar = new Navbar();
+
+
 
 /***/ })
 /******/ ]);
