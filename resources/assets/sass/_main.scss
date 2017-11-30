@@ -1,6 +1,103 @@
+body{
+  font-size:16px;
+}
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 .main-image{
+  height:100vh;
   img{
     width:100%;
-    height:100vh;
+    height:inherit;
+  }
+}
+.wellcome-text{
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+.aboutme{
+  img{
+    width:100%;
+  }
+  text-align: center;
+  .personal-info{
+    border:2px solid black;
+  }
+  .about-text{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    p{
+      line-height: 2;
+      flex:1;
+    }
+  }
+  .social-buttons{
+    flex:1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    p{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    ul{
+      list-style: none;
+      margin:0;
+      padding:5px;
+      width:100%;
+      li{
+        display:inline-block;
+        border-radius: 50%;
+        background-color: rgb(18, 19, 21);
+        width:45px;
+        height:45px;
+        vertical-align: middle;
+        &:not(:last-child){
+          margin-right:20px;
+        }
+      }
+    }
+  }
+}
+.section{
+  padding-top:20px;
+  h1{
+    text-align: center;
+    text-transform:uppercase;
+  }
+  .separator{
+    text-align: center;
+    margin-bottom:20px;
+    position: relative;
+    .separator-line{
+      display: inline-block;
+      height: 5px;
+      width: 5%;
+      background-color: $separator-color;
+      &::after{
+        content: '';
+        height: 1px;
+        width: 20%;
+        position: absolute;
+        top: 15px;
+        left: 40%;
+      }
+      &.background-black::after{
+        background-color: black;
+      }
+      &.background-white::after{
+        background-color: white;
+      }
+    }
+
   }
 }
