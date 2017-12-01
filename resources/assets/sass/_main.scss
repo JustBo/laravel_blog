@@ -57,7 +57,7 @@ body{
       li{
         display:inline-block;
         border-radius: 50%;
-        background-color: rgb(18, 19, 21);
+        background-color: $common-color;
         width:45px;
         height:45px;
         vertical-align: middle;
@@ -118,70 +118,82 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;
-  .work-info{
-    height:100px;
-    color:white;
-    .right-work-exp{
-      border-left:1px solid white;
-    }
-    .right-work-exp{
-      text-align:left;
-      & > div{
-        padding-left:20px;
-      }
-    }
-    .left-work-exp{
-      text-align:right;
-      & > div{
-        padding-right:20px;
-      }
-    }
-    .right-work-exp,
-    .left-work-exp{
-      height:200px;
-    }
-  }
   .company-years{
-    display:inline-block;
-    padding:10px;
-    background-color: #1b242f;
-    border:1px solid #1b242f;
-    position:relative;
-    span{
-      position: relative;
-      z-index: 2;
-    }
-    &::after{
-      content: '';
-      position: absolute;
-      height: 33px;
-      width: 33px;
-      background-color: inherit;
-      top: 6px;
-      transform: rotate(45deg);
-      z-index: 1;
+    background-color: $common-color;
+    border:1px solid $common-color;
+  }
+}
+.education{
+  background-color:$common-color;
+  .company-years{
+    background-color: white;
+    border:1px solid white;
+    color: $common-color;
+  }
+}
+.work-description{
+  margin-top:20px;
+}
+.work-info{
+  height:100px;
+  color:white;
+  .right-work-exp{
+    border-left:1px solid white;
+  }
+  .right-work-exp{
+    text-align:left;
+    & > div{
+      padding-left:20px;
     }
   }
   .left-work-exp{
-    .company-years::after{
-      right: -18px;
+    text-align:right;
+    & > div{
+      padding-right:20px;
     }
   }
-  .right-work-exp{
-    .company-years::after{
-      left: -18px;
-    }
-  }
-  .company-name{
-    border:1px solid rgb(18, 19, 21);
-    display: inline-block;
-    padding: 10px;
-  }
-  .work-description{
-    margin-top:20px;
+  .right-work-exp,
+  .left-work-exp{
+    height:200px;
   }
 }
-
-.education{
-  background-color:#1b242f;
+.company-years{
+  display:inline-block;
+  padding:10px;
+  position:relative;
+  span{
+    position: relative;
+    z-index: 2;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    height: 33px;
+    width: 33px;
+    background-color: inherit;
+    top: 6px;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+}
+.left-work-exp{
+  .company-years::after{
+    right: -18px;
+  }
+}
+.right-work-exp{
+  .company-years::after{
+    left: -18px;
+  }
+}
+.company-name{
+  border:1px solid rgb(18, 19, 21);
+  display: inline-block;
+  padding: 10px;
+}
+.add-line{
+  background-color: $common-color;
+  height: 65px;
+  margin-top: -50px;
+  transform: skewY(3deg);
 }

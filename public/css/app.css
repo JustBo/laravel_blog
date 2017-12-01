@@ -8466,7 +8466,7 @@ body {
 .aboutme .social-buttons ul li {
   display: inline-block;
   border-radius: 50%;
-  background-color: #121315;
+  background-color: #1b242f;
   width: 45px;
   height: 45px;
   vertical-align: middle;
@@ -8538,50 +8538,67 @@ body {
   background-position-y: center;
 }
 
-.work-experience .work-info {
+.work-experience .company-years {
+  background-color: #1b242f;
+  border: 1px solid #1b242f;
+}
+
+.education {
+  background-color: #1b242f;
+}
+
+.education .company-years {
+  background-color: white;
+  border: 1px solid white;
+  color: #1b242f;
+}
+
+.work-description {
+  margin-top: 20px;
+}
+
+.work-info {
   height: 100px;
   color: white;
 }
 
-.work-experience .work-info .right-work-exp {
+.work-info .right-work-exp {
   border-left: 1px solid white;
 }
 
-.work-experience .work-info .right-work-exp {
+.work-info .right-work-exp {
   text-align: left;
 }
 
-.work-experience .work-info .right-work-exp > div {
+.work-info .right-work-exp > div {
   padding-left: 20px;
 }
 
-.work-experience .work-info .left-work-exp {
+.work-info .left-work-exp {
   text-align: right;
 }
 
-.work-experience .work-info .left-work-exp > div {
+.work-info .left-work-exp > div {
   padding-right: 20px;
 }
 
-.work-experience .work-info .right-work-exp,
-.work-experience .work-info .left-work-exp {
+.work-info .right-work-exp,
+.work-info .left-work-exp {
   height: 200px;
 }
 
-.work-experience .company-years {
+.company-years {
   display: inline-block;
   padding: 10px;
-  background-color: #1b242f;
-  border: 1px solid #1b242f;
   position: relative;
 }
 
-.work-experience .company-years span {
+.company-years span {
   position: relative;
   z-index: 2;
 }
 
-.work-experience .company-years::after {
+.company-years::after {
   content: '';
   position: absolute;
   height: 33px;
@@ -8593,25 +8610,25 @@ body {
   z-index: 1;
 }
 
-.work-experience .left-work-exp .company-years::after {
+.left-work-exp .company-years::after {
   right: -18px;
 }
 
-.work-experience .right-work-exp .company-years::after {
+.right-work-exp .company-years::after {
   left: -18px;
 }
 
-.work-experience .company-name {
+.company-name {
   border: 1px solid #121315;
   display: inline-block;
   padding: 10px;
 }
 
-.work-experience .work-description {
-  margin-top: 20px;
-}
-
-.education {
+.add-line {
   background-color: #1b242f;
+  height: 65px;
+  margin-top: -50px;
+  -webkit-transform: skewY(3deg);
+          transform: skewY(3deg);
 }
 
