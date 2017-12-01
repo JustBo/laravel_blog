@@ -69,10 +69,16 @@ body{
   }
 }
 .section{
-  padding-top:20px;
+  position:relative;
+  padding:40px 0;
   h1{
     text-align: center;
     text-transform:uppercase;
+    position:relative;
+    z-index:3;
+    &.white-color{
+      color:white;
+    }
   }
   .separator{
     text-align: center;
@@ -80,10 +86,7 @@ body{
     position: relative;
     .separator-line{
       display: inline-block;
-      height: 5px;
-      width: 5%;
-      background-color: $separator-color;
-      &::after{
+      &::before{
         content: '';
         height: 1px;
         width: 20%;
@@ -91,13 +94,94 @@ body{
         top: 15px;
         left: 40%;
       }
-      &.background-black::after{
+      &.background-black::before{
         background-color: black;
       }
-      &.background-white::after{
+      &.background-white::before{
         background-color: white;
       }
     }
-
   }
+  .section-content{
+    margin-top: 20px;
+  }
+  .section-banner{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #121518;
+    opacity: 0.6;
+    top:0;
+  }
+}
+.work-experience{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  .work-info{
+    height:100px;
+    color:white;
+    .right-work-exp{
+      border-left:1px solid white;
+    }
+    .right-work-exp{
+      text-align:left;
+      & > div{
+        padding-left:20px;
+      }
+    }
+    .left-work-exp{
+      text-align:right;
+      & > div{
+        padding-right:20px;
+      }
+    }
+    .right-work-exp,
+    .left-work-exp{
+      height:200px;
+    }
+  }
+  .company-years{
+    display:inline-block;
+    padding:10px;
+    background-color: #1b242f;
+    border:1px solid #1b242f;
+    position:relative;
+    span{
+      position: relative;
+      z-index: 2;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      height: 33px;
+      width: 33px;
+      background-color: inherit;
+      top: 6px;
+      transform: rotate(45deg);
+      z-index: 1;
+    }
+  }
+  .left-work-exp{
+    .company-years::after{
+      right: -18px;
+    }
+  }
+  .right-work-exp{
+    .company-years::after{
+      left: -18px;
+    }
+  }
+  .company-name{
+    border:1px solid rgb(18, 19, 21);
+    display: inline-block;
+    padding: 10px;
+  }
+  .work-description{
+    margin-top:20px;
+  }
+}
+
+.education{
+  background-color:#1b242f;
 }

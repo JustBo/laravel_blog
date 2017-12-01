@@ -42,30 +42,98 @@
       </div>
     </section>
   </div>
-  <section class="section work-experience">
-    <h1>work experience</h1>
+  <section class="section work-experience" style="background-image:url('{{ asset('images/work-experience.jpg') }}');">
+    <div class="section-banner"></div>
+    <h1 class="white-color">work experience</h1>
     <div class="separator">
-      <div class="separator-line background-black"></div>
+      <div class="separator-line background-white"></div>
     </div>
     <div class="container">
       <div class="section-content">
-        Content
+        <div class="row work-info">
+          <div class="col-md-6 left-work-exp">
+            <div class="">
+              <div class="company-years">
+                <span>2016 - 2017</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 right-work-exp">
+            <div class="">
+              <div class="company-name">
+                Company name
+              </div>
+              <div class="work-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row work-info">
+          <div class="col-md-6 left-work-exp">
+            <div class="">
+              <div class="company-name">
+                Company name
+              </div>
+              <div class="work-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 right-work-exp">
+            <div class="">
+              <div class="company-years">
+                <span>2016 - 2017</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row work-info">
+          <div class="col-md-6 left-work-exp">
+            <div class="">
+              <div class="company-years">
+                <span>2016 - 2017</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 right-work-exp">
+            <div class="">
+              <div class="company-name">
+                Company name
+              </div>
+              <div class="work-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </section>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
-     iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
-     iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+
+  <section class="section education">
+    <h1 class="white-color">education</h1>
+    <div class="separator">
+      <div class="separator-line background-white"></div>
+    </div>
+    <div class="section-content">
+      <div class="container">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+           et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
+           iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+           et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
+           iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
