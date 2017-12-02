@@ -197,3 +197,19 @@ body{
   margin-top: -50px;
   transform: skewY(3deg);
 }
+.latest-projects{
+  text-align: center;
+  .section-content{
+    margin-top: 50px;
+  }
+  .project-item{
+
+  }
+  .project-description{
+    margin-top:30px;
+  }
+  img{
+    width:50%;
+    height:50%;
+  }
+}

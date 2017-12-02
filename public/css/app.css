@@ -8632,3 +8632,20 @@ body {
           transform: skewY(3deg);
 }
 
+.latest-projects {
+  text-align: center;
+}
+
+.latest-projects .section-content {
+  margin-top: 50px;
+}
+
+.latest-projects .project-description {
+  margin-top: 30px;
+}
+
+.latest-projects img {
+  width: 50%;
+  height: 50%;
+}
+
