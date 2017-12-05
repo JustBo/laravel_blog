@@ -30,10 +30,10 @@
               </p>
               <div class="social-buttons">
                 <ul>
-                  <li class="social facebook"></li>
-                  <li class="social linkedin"></li>
-                  <li class="social instagram"></li>
-                  <li class="social github"></li>
+                  <li class="social facebook"><a class="social-link" href="https://www.facebook.com/profile.php?id=100001600809506" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                  <li class="social linkedin"><a class="social-link" href="https://www.facebook.com/profile.php?id=100001600809506" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                  <li class="social instagram"><a class="social-link" href="https://www.facebook.com/profile.php?id=100001600809506" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                  <li class="social github"><a class="social-link" href="https://www.facebook.com/profile.php?id=100001600809506" target="_blank"><i class="fa fa-github"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -220,35 +220,82 @@
     </div>
   </section>
 
+  {{-- <div class="add-line1"></div> --}}
+  <section class="section skills" style="background-image:url('{{asset('images/skills2.jpg')}}')">
+    <div class="section-banner"></div>
+    <h1 class="white-color">skills</h1>
+    <div class="separator">
+      <div class="separator-line background-white"></div>
+    </div>
+    <div class="section-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="skills-charts">
+              <ul>
+                <li>
+                  <div class="skill-description">
+                    HTML
+                  </div>
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress" style="width:100%"></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="skill-description">
+                    CSS
+                  </div>
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress" style="width:80%"></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="skill-description">
+                    JS
+                  </div>
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress" style="width:84%"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="skills-charts">
+              <ul>
+                <li>
+                  <div class="skill-description">
+                    PHP
+                  </div>
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress" style="width:96%"></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="skill-description">
+                    MySQL
+                  </div>
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress" style="width:78%"></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="skill-description">
+                    Laravel
+                  </div>
+                  <div class="skill-progress-bar">
+                    <div class="skill-progress" style="width:65%"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
-     iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
-     iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
-     iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
-     iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut al
-     iquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+      </div>
+    </div>
+  </section>
+  {{-- <div class="add-line"></div> --}}
+
+
 @endsection

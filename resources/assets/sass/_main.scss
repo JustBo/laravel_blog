@@ -1,5 +1,11 @@
 body{
   font-size:16px;
+  background-color: #E3E3E3;
+}
+ul{
+  list-style: none;
+  margin:0;
+  padding:0;
 }
 .row-eq-height {
   display: -webkit-box;
@@ -50,21 +56,18 @@ body{
       font-weight: bold;
     }
     ul{
-      list-style: none;
-      margin:0;
       padding:5px;
       width:100%;
       li{
         display:inline-block;
-        border-radius: 50%;
-        background-color: $common-color;
-        width:45px;
-        height:45px;
-        vertical-align: middle;
         &:not(:last-child){
           margin-right:20px;
         }
       }
+    }
+    i{
+      font-size:32px;
+      color:$common-color;
     }
   }
 }
@@ -196,6 +199,8 @@ body{
   height: 65px;
   margin-top: -50px;
   transform: skewY(3deg);
+  position: relative;
+  z-index: -1;
 }
 .latest-projects{
   text-align: center;
@@ -211,5 +216,32 @@ body{
   img{
     width:50%;
     height:50%;
+  }
+}
+
+.add-line1{
+  background-color: $common-color;
+  height: 50px;
+  margin-top: 50px;
+  transform: skewY(3deg);
+  position: relative;
+  z-index: -1;
+}
+
+.skills{
+  color:$footer-color;
+  background-color: $common-color;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  li{
+    padding:10px 0;
+  }
+  .skill-progress-bar{
+    background-color: rgba(27, 36, 47, 0.56);
+  }
+  .skill-progress{
+    height:25px;
+    background-color:#E3E3E3;
   }
 }
