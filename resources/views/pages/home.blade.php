@@ -51,14 +51,14 @@
     <div class="container">
       <div class="section-content">
         <div class="row work-info">
-          <div class="col-md-6 left-work-exp">
+          <div class="col-xs-6 col-md-6 left-work-exp">
             <div class="">
               <div class="company-years">
                 <span>2016 - 2017</span>
               </div>
             </div>
           </div>
-          <div class="col-md-6 right-work-exp">
+          <div class="col-xs-6 col-md-6 right-work-exp">
             <div class="">
               <div class="company-name">
                 Company name
@@ -70,7 +70,7 @@
           </div>
         </div>
         <div class="row work-info">
-          <div class="col-md-6 left-work-exp">
+          <div class="col-xs-6 col-md-6 left-work-exp">
             <div class="">
               <div class="company-name">
                 Company name
@@ -80,7 +80,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 right-work-exp">
+          <div class="col-xs-6 col-md-6 right-work-exp">
             <div class="">
               <div class="company-years">
                 <span>2016 - 2017</span>
@@ -89,14 +89,14 @@
           </div>
         </div>
         <div class="row work-info">
-          <div class="col-md-6 left-work-exp">
+          <div class="col-xs-6 col-md-6 left-work-exp">
             <div class="">
               <div class="company-years">
                 <span>2016 - 2017</span>
               </div>
             </div>
           </div>
-          <div class="col-md-6 right-work-exp">
+          <div class="col-xs-6 col-md-6 right-work-exp">
             <div class="">
               <div class="company-name">
                 Company name
@@ -120,14 +120,14 @@
       <div class="container">
         <div class="section-content">
           <div class="row work-info">
-            <div class="col-md-6 left-work-exp">
+            <div class="col-xs-6 col-md-6 left-work-exp">
               <div class="">
                 <div class="company-years">
                   <span>2016 - 2017</span>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 right-work-exp">
+            <div class="col-xs-6 col-md-6 right-work-exp">
               <div class="">
                 <div class="company-name">
                   University
@@ -139,7 +139,7 @@
             </div>
           </div>
           <div class="row work-info">
-            <div class="col-md-6 left-work-exp">
+            <div class="col-xs-6 col-md-6 left-work-exp">
               <div class="">
                 <div class="company-name">
                   University
@@ -149,7 +149,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 right-work-exp">
+            <div class="col-xs-6 col-md-6 right-work-exp">
               <div class="">
                 <div class="company-years">
                   <span>2016 - 2017</span>
@@ -158,14 +158,14 @@
             </div>
           </div>
           <div class="row work-info">
-            <div class="col-md-6 left-work-exp">
+            <div class="col-xs-6 col-md-6 left-work-exp">
               <div class="">
                 <div class="company-years">
                   <span>2016 - 2017</span>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 right-work-exp">
+            <div class="col-xs-6 col-md-6 right-work-exp">
               <div class="">
                 <div class="company-name">
                   University
