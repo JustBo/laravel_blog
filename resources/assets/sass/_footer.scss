@@ -21,6 +21,17 @@ footer{
       }
     }
   }
+  .contact-mail,
+  .contact-phone{
+    padding:5px;
+    a{
+      color: $footer-color;
+      &:hover{
+        text-decoration: none;
+        color: rgb(180, 214, 255);
+      }
+    }
+  }
   .hire-me{
     display: inline-block;
     border: 1px solid $footer-color;
@@ -39,5 +50,9 @@ footer{
     &:hover{
       background-color: $common-color;
     }
+  }
+  .social-buttons,
+  .contact-mail{
+    margin-top:15px;
   }
 }

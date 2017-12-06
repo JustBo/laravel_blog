@@ -1,6 +1,25 @@
+*{
+  margin: 0;
+}
+html{
+  height: 100%;
+}
 body{
   font-size:16px;
   background-color: #E3E3E3;
+  height: 100%;
+}
+main{
+  min-height: 100%;
+  margin-bottom: -229px;
+  &:after{
+    content: "";
+    display: block;
+  }
+}
+main:after,
+footer{
+  height:229px;
 }
 ul{
   list-style: none;

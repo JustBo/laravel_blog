@@ -11430,9 +11430,33 @@ button.close {
   background-color: #090909;
 }
 
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   font-size: 16px;
   background-color: #E3E3E3;
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+  margin-bottom: -229px;
+}
+
+main:after {
+  content: "";
+  display: block;
+}
+
+main:after,
+footer {
+  height: 229px;
 }
 
 ul {
@@ -11775,6 +11799,22 @@ footer li .social-link:hover {
   color: #1b242f;
 }
 
+footer .contact-mail,
+footer .contact-phone {
+  padding: 5px;
+}
+
+footer .contact-mail a,
+footer .contact-phone a {
+  color: #E3E3E3;
+}
+
+footer .contact-mail a:hover,
+footer .contact-phone a:hover {
+  text-decoration: none;
+  color: #b4d6ff;
+}
+
 footer .hire-me {
   display: inline-block;
   border: 1px solid #E3E3E3;
@@ -11796,5 +11836,10 @@ footer .hire-me a:hover {
 
 footer .hire-me:hover {
   background-color: #1b242f;
+}
+
+footer .social-buttons,
+footer .contact-mail {
+  margin-top: 15px;
 }
 

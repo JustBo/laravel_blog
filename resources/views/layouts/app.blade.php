@@ -7,7 +7,9 @@
   </head>
   <body>
     @include('inc.navbar')
-    @yield('content')
+    <main>
+      @yield('content')
+    </main>
     @include('inc.footer')
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('javascript')
