@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Admin panel</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-        @yield('content')
-    </div>
+      @yield('content')
   </body>
 </html>

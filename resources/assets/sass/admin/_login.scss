@@ -1,0 +1,45 @@
+.admin-login{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: $common-color;
+  background-size: cover;
+  .panel{
+    width: 33%;
+    background-color: rgba(27, 36, 47, 0.78);
+    text-align: center;
+    padding: 25px 40px;
+  }
+  .form-control{
+    background-color: inherit;
+    border:none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    color:inherit;
+    font-size: 18px;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+  button{
+    width: 100%;
+    border: 1px solid white;
+    background-color: inherit;
+    margin-top: 15px;
+    transition: all 0.4s;
+    &:hover{
+      background-color: white;
+      color:$common-color;
+      border: 1px solid $common-color;
+    }
+  }
+  .panel-heading,
+  .panel-body{
+    width: 80%;
+    display: inline-block;
+    text-align: left;
+    color:white;
+    font-size: 18px;
+  }
+}
