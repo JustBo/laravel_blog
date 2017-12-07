@@ -14,13 +14,13 @@
         <div class="separator-line background-black"></div>
       </div>
       <div class="section-content">
-        <div class="row row-eq-height">
-          <div class="col-md-6">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
             <div class="personal-info">
               <img src="{{ asset('images/avatar.jpg') }}" alt="personal photo">
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-xs-12 col-md-6">
             <div class="about-text">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
