@@ -7,8 +7,17 @@
 // Variables
 @import "../variables";
 
+// admin Variables
+@import "variables";
+
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Login
 @import "login";
+
+// sidebar
+@import "sidebar";
+
+// admin area
+@import "adminarea";
