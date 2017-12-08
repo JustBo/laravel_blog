@@ -11478,7 +11478,7 @@ ul {
 }
 
 .sidebar .section-header {
-  background-color: #12181f;
+  background-color: #3f546d;
   padding: 10px;
   border-bottom: 1px solid #3f546d;
 }
@@ -11498,6 +11498,16 @@ ul {
 .sidebar .logout-button {
   position: absolute;
   bottom: 0;
+}
+
+.sidebar .control-panel {
+  padding: 10px;
+  font-size: 24px;
+}
+
+.sidebar .control-panel span {
+  padding: 2px;
+  cursor: pointer;
 }
 
 .admin-managment {

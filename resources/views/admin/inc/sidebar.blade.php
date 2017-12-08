@@ -1,4 +1,7 @@
 <div class="sidebar">
+  <section class="section-content control-panel">
+    <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+  </section>
   <section class="section-content">
     <div class="section-header">
       Content

@@ -10,7 +10,7 @@ ul{
   background-color: $common-color;
   color: white;
   .section-header{
-    background-color: #12181f;
+    background-color: #3f546d;
     padding:10px;
     // border-bottom: 1px solid $body-bg;
     border-bottom: 1px solid #3f546d;
@@ -28,5 +28,13 @@ ul{
   .logout-button{
     position: absolute;
     bottom: 0;
+  }
+  .control-panel{
+    padding: 10px;
+    font-size: 24px;
+    span{
+      padding:2px;
+      cursor: pointer;
+    }
   }
 }

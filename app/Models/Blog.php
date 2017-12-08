@@ -11,4 +11,8 @@ class Blog extends Model
     return $this->belongsToMany('App\Models\Category')->withTimestamps();
   }
 
+  public function comments(){
+    return $this->belongsToMany('App\Models\Comment')->withTimestamps();
+  }
+
 }
