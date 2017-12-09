@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Pages;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProjectsController extends Controller
+class AboutController extends Controller
 {
   /**
    * Show the application dashboard.
@@ -14,6 +14,6 @@ class ProjectsController extends Controller
    */
   public function index()
   {
-      return view('pages.projects');
+      return view('pages.about');
   }
 }

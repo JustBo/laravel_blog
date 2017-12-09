@@ -18,17 +18,28 @@ Route::get('/redirect', 'Auth\SocialAuthFacebookController@redirect')->name('fac
 Route::get('/callback', 'Auth\SocialAuthFacebookController@callback')->name('facebook.callback');
 
 
-Route::get('/', 'Pages\HomeController@index')->name('home');
-Route::get('/home', 'Pages\HomeController@index')->name('home');
-Route::get('/about', 'Pages\AboutController@index')->name('about');
-Route::get('/projects', 'Pages\ProjectsController@index')->name('projects');
-Route::get('/blog', 'Pages\BlogController@index')->name('blog');
-Route::get('/contact', 'Pages\ContactController@index')->name('contact');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', 'AboutController@index')->name('about');
+Route::get('/projects', 'ProjectsController@index')->name('projects');
+Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/contact', 'ContactController@index')->name('contact');
 
 // Admin routes
 Route::prefix('admin')->group(function () {
+  //logins routes
     Route::get('login', 'Auth\AdminLoginController@index')->name('admin.login');
     Route::post('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::middleware('auth:admin')->group(function () {
+      Route::get('/', 'AdminController@index')->name('admin.dashboard');
+      //content routes
+      Route::get('/blog', 'Admin\BlogController@index')->name('admin.blog');
+      Route::get('/projects', 'Admin\ProjectsController@index')->name('admin.projects');
+      Route::get('/skills', 'Admin\SkillsController@index')->name('admin.skills');
+      Route::get('/education', 'Admin\EducationController@index')->name('admin.education');
+      Route::get('/experience', 'Admin\ExperienceController@index')->name('admin.experience');
+      //administrations routes
+      Route::get('/user', 'Admin\UserController@index')->name('admin.user');
+    });
 });

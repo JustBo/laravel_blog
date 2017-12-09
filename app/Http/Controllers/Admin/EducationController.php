@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Pages;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class BlogController extends Controller
+class EducationController extends Controller
 {
   /**
    * Show the application dashboard.
@@ -14,6 +14,6 @@ class BlogController extends Controller
    */
   public function index()
   {
-      return view('pages.blog');
+      return view('admin.education');
   }
 }
