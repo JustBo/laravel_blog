@@ -38,6 +38,7 @@ Route::prefix('admin')->group(function () {
       Route::get('/blog', 'Admin\BlogController@index')->name('admin.blog');
       Route::get('/blog/create', 'Admin\BlogController@create')->name('admin.blog.create');
       Route::get('/blog/{id}', 'Admin\BlogController@edit')->name('admin.blog.edit');
+      Route::post('/blog/create', 'Admin\BlogController@store')->name('admin.blog.store');
 
       Route::get('/projects', 'Admin\ProjectsController@index')->name('admin.projects');
 
