@@ -9,6 +9,7 @@
     <ul>
       <li><a href="{{ route('admin.blog') }}">Blog</a></li>
       <li><a href="{{ route('admin.projects') }}">Projects</a></li>
+      <li><a href="{{ route('admin.categories') }}">Categories</a></li>
       <li><a href="{{ route('admin.skills') }}">Skills</a></li>
       <li><a href="{{ route('admin.education') }}">Education</a></li>
       <li><a href="{{ route('admin.experience') }}">Experience</a></li>

@@ -9,7 +9,9 @@
   <body>
     @include('admin.inc.sidebar')
     <div class="admin-managment">
-      @yield('content')
+      <div class="container-fluid">
+          @yield('content')
+      </div>
     </div>
   </body>
 </html>

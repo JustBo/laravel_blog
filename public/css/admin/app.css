@@ -11516,3 +11516,16 @@ ul {
   width: calc(100% - 200px);
 }
 
+.add-new-btn {
+  width: 80%;
+}
+
+.item {
+  display: block;
+  color: black;
+}
+
+.item:nth-child(2n) {
+  background-color: #f1f0f0;
+}
+

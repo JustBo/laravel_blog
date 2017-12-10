@@ -34,8 +34,15 @@ Route::prefix('admin')->group(function () {
     Route::middleware('auth:admin')->group(function () {
       Route::get('/', 'AdminController@index')->name('admin.dashboard');
       //content routes
+      //blog routes
       Route::get('/blog', 'Admin\BlogController@index')->name('admin.blog');
+      Route::get('/blog/create', 'Admin\BlogController@create')->name('admin.blog.create');
+      Route::get('/blog/{id}', 'Admin\BlogController@edit')->name('admin.blog.edit');
+
       Route::get('/projects', 'Admin\ProjectsController@index')->name('admin.projects');
+
+      Route::get('/categories', 'Admin\CategoryController@index')->name('admin.categories');
+
       Route::get('/skills', 'Admin\SkillsController@index')->name('admin.skills');
       Route::get('/education', 'Admin\EducationController@index')->name('admin.education');
       Route::get('/experience', 'Admin\ExperienceController@index')->name('admin.experience');

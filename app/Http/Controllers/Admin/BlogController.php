@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 
 class BlogController extends Controller
 {
@@ -14,6 +15,16 @@ class BlogController extends Controller
    */
   public function index()
   {
-      return view('admin.blog');
+    $blogs = Blog::all();
+    return view('admin.blog.blogs', compact('blogs'));
+  }
+
+  public function edit($id){
+    $blog = Blog::findOrFail( $id );
+    return view('admin.blog.edit', compact('blog'));
+  }
+
+  public function create(){
+    return view('admin.blog.create');
   }
 }

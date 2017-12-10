@@ -3,3 +3,13 @@
   left: $side-bar-width;
   width: calc(100% - #{$side-bar-width});
 }
+.add-new-btn{
+  width:80%;
+}
+.item{
+  display:block;
+  color:black;
+  &:nth-child(2n){
+    background-color: #f1f0f0;
+  }
+}
