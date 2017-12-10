@@ -43,6 +43,9 @@ Route::prefix('admin')->group(function () {
       Route::get('/projects', 'Admin\ProjectsController@index')->name('admin.projects');
 
       Route::get('/categories', 'Admin\CategoryController@index')->name('admin.categories');
+      Route::get('/categories/create', 'Admin\CategoryController@create')->name('admin.category.create');
+      Route::get('/categories/{id}', 'Admin\CategoryController@edit')->name('admin.category.edit');
+      Route::post('/categories/create', 'Admin\CategoryController@store')->name('admin.category.store');
 
       Route::get('/skills', 'Admin\SkillsController@index')->name('admin.skills');
       Route::get('/education', 'Admin\EducationController@index')->name('admin.education');
