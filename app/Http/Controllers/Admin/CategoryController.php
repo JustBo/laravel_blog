@@ -68,6 +68,7 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail( $id );
         $category->blogs()->delete();
+        $category->projects()->delete();
         $category->delete();
         return redirect()->route('admin.categories');
     }

@@ -43,6 +43,11 @@ Route::prefix('admin')->group(function () {
       Route::delete('/blog/{id}', 'Admin\BlogController@destroy')->name('admin.blog.destroy');
 
       Route::get('/projects', 'Admin\ProjectsController@index')->name('admin.projects');
+      Route::get('/projects/create', 'Admin\ProjectsController@create')->name('admin.projects.create');
+      Route::get('/projects/{id}', 'Admin\ProjectsController@edit')->name('admin.projects.edit');
+      Route::post('/projects/create', 'Admin\ProjectsController@store')->name('admin.projects.store');
+      Route::post('/projects/{id}', 'Admin\ProjectsController@update')->name('admin.projects.update');
+      Route::delete('/projects/{id}', 'Admin\ProjectsController@destroy')->name('admin.projects.destroy');
 
       Route::get('/categories', 'Admin\CategoryController@index')->name('admin.categories');
       Route::get('/categories/create', 'Admin\CategoryController@create')->name('admin.category.create');
