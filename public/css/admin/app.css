@@ -11517,6 +11517,10 @@ ul {
   line-height: 30px;
 }
 
+.admin-managment .header {
+  font-weight: bold;
+}
+
 .add-new-btn {
   width: 80%;
 }

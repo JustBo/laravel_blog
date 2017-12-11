@@ -3,6 +3,9 @@
   left: $side-bar-width;
   width: calc(100% - #{$side-bar-width});
   line-height: 30px;
+  .header{
+    font-weight: bold;
+  }
 }
 .add-new-btn{
   width:80%;

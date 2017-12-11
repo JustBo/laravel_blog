@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Category;
+use App\Http\Requests\StoreBlog;
 
 class BlogController extends Controller
 {
@@ -15,7 +17,7 @@ class BlogController extends Controller
    */
   public function index()
   {
-    $blogs = Blog::all();
+    $blogs = Blog::with('categories')->get();
     return view('admin.blog.blogs', compact('blogs'));
   }
   /**
@@ -25,8 +27,9 @@ class BlogController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function edit($id){
+    $categories = Category::pluck('name', 'id');
     $blog = Blog::findOrFail( $id );
-    return view('admin.blog.edit', compact('blog'));
+    return view('admin.blog.edit', compact('blog', 'categories'));
   }
   /**
    * Show the form for creating a new resource.
@@ -34,7 +37,8 @@ class BlogController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function create(){
-    return view('admin.blog.create');
+    $categories = Category::pluck('name', 'id');
+    return view('admin.blog.create', compact('categories'));
   }
   /**
    * Store a newly created resource in storage.
@@ -42,8 +46,10 @@ class BlogController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request){
-    return $request->input();
+  public function store(StoreBlog $request){
+    $blog = Blog::create( $request->input() );
+    $blog->categories()->sync($request->input('category_list'));
+    return redirect()->route('admin.blog');
   }
   /**
    * Update the specified resource in storage.
@@ -52,8 +58,11 @@ class BlogController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id){
-    return $request->input();
+  public function update(StoreBlog $request, $id){
+    $blog = Blog::findOrFail($id);
+    $blog->update( $request->input() );
+    $blog->categories()->sync($request->input('category_list'));
+    return redirect()->route('admin.blog');
   }
   /**
    * Remove the specified resource from storage.
@@ -63,6 +72,8 @@ class BlogController extends Controller
    */
   public function destroy($id)
   {
-      //
+      $blog = Blog::findOrFail($id);
+      $blog->delete();
+      return redirect()->route('admin.blog');
   }
 }

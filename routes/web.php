@@ -40,6 +40,7 @@ Route::prefix('admin')->group(function () {
       Route::get('/blog/{id}', 'Admin\BlogController@edit')->name('admin.blog.edit');
       Route::post('/blog/create', 'Admin\BlogController@store')->name('admin.blog.store');
       Route::post('/blog/{id}', 'Admin\BlogController@update')->name('admin.blog.update');
+      Route::delete('/blog/{id}', 'Admin\BlogController@destroy')->name('admin.blog.destroy');
 
       Route::get('/projects', 'Admin\ProjectsController@index')->name('admin.projects');
 

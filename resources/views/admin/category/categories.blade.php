@@ -3,6 +3,16 @@
 @section('content')
   <h1 class="text-center">Categories</h1>
   <div class="list-group">
+    <div class="list-group-item header">
+       <div class="row">
+         <div class="col-md-3">
+           Id
+         </div>
+         <div class="col-md-8">
+           Name
+         </div>
+       </div>
+     </div>
    @foreach ($categories as $key => $category)
      <a class="list-group-item item" href="{{ route('admin.category.edit', ['id' => $category->id]) }}">
         <div class="row">
