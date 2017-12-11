@@ -2,13 +2,7 @@
 
 @section('content')
   <h1 class="text-center">Create new category</h1>
-  {!! Form::open(['route' => 'admin.category.store']) !!}
-  <div class="form-group">
-    {!! Form::label('name', 'Name:'); !!}
-    {!! Form::text('name', null , ['class' => 'form-control']) !!}
-  </div>
-  <div class="input-group">
-    {!! Form::submit('Create', ['class' => 'btn btn-primary form-control']) !!}
-  </div>
+  {!! Form::model($category = new \App\Models\Category ,['route' => 'admin.category.store']) !!}
+    @include('admin.category._form', ['submit_button' => 'Create'])
   {!! Form::close() !!}
 @endsection

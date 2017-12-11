@@ -39,6 +39,7 @@ Route::prefix('admin')->group(function () {
       Route::get('/blog/create', 'Admin\BlogController@create')->name('admin.blog.create');
       Route::get('/blog/{id}', 'Admin\BlogController@edit')->name('admin.blog.edit');
       Route::post('/blog/create', 'Admin\BlogController@store')->name('admin.blog.store');
+      Route::post('/blog/{id}', 'Admin\BlogController@update')->name('admin.blog.update');
 
       Route::get('/projects', 'Admin\ProjectsController@index')->name('admin.projects');
 
@@ -46,6 +47,8 @@ Route::prefix('admin')->group(function () {
       Route::get('/categories/create', 'Admin\CategoryController@create')->name('admin.category.create');
       Route::get('/categories/{id}', 'Admin\CategoryController@edit')->name('admin.category.edit');
       Route::post('/categories/create', 'Admin\CategoryController@store')->name('admin.category.store');
+      Route::post('/categories/{id}', 'Admin\CategoryController@update')->name('admin.category.update');
+      Route::delete('/categories/{id}', 'Admin\CategoryController@destroy')->name('admin.category.destroy');
 
       Route::get('/skills', 'Admin\SkillsController@index')->name('admin.skills');
       Route::get('/education', 'Admin\EducationController@index')->name('admin.education');

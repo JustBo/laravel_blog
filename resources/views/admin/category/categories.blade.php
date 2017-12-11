@@ -9,8 +9,14 @@
           <div class="col-md-3">
             {{ $category->id }}
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             {{ $category->name }}
+          </div>
+          <div class="col-md-1">
+            {!!Form::open(['route' => ['admin.category.destroy', $category->id], 'method' => 'POST'])!!}
+              {{Form::hidden('_method', 'DELETE')}}
+              {{Form::submit('Delete', ['class' => 'btn btn-danger btn-sm'])}}
+            {!!Form::close()!!}
           </div>
         </div>
       </a>
