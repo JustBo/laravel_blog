@@ -50,63 +50,42 @@
     </div>
     <div class="container">
       <div class="section-content">
-        <div class="row work-info">
-          <div class="col-xs-6 col-md-6 left-work-exp">
-            <div class="">
-              <div class="company-years">
-                <span>2016 - 2017</span>
+        @foreach ($experiences as $key => $experience)
+          <div class="row work-info">
+            <div class="col-xs-6 col-md-6 left-work-exp">
+              <div class="">
+                @if ( $loop->index % 2 == 0 )
+                  <div class="company-years">
+                    <span>{{ \Carbon\Carbon::parse($experience->start)->format('Y/m') }} - {{ \Carbon\Carbon::parse($experience->end)->format('Y/m') }}</span>
+                  </div>
+                @else
+                  <div class="company-name">
+                    {{ $experience->place }} {{ $loop->depth }}
+                  </div>
+                  <div class="work-description">
+                    {{ $experience->description }}
+                  </div>
+                @endif
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-6 right-work-exp">
+              <div class="">
+                @if ( $loop->index % 2 == 0 )
+                  <div class="company-name">
+                    {{ $experience->place }} {{ $loop->depth }}
+                  </div>
+                  <div class="work-description">
+                    {{ $experience->description }}
+                  </div>
+                @else
+                  <div class="company-years">
+                    <span>{{ \Carbon\Carbon::parse($experience->start)->format('Y/m') }} - {{ \Carbon\Carbon::parse($experience->end)->format('Y/m') }}</span>
+                  </div>
+                @endif
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-md-6 right-work-exp">
-            <div class="">
-              <div class="company-name">
-                Company name
-              </div>
-              <div class="work-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row work-info">
-          <div class="col-xs-6 col-md-6 left-work-exp">
-            <div class="">
-              <div class="company-name">
-                Company name
-              </div>
-              <div class="work-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-6 right-work-exp">
-            <div class="">
-              <div class="company-years">
-                <span>2016 - 2017</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row work-info">
-          <div class="col-xs-6 col-md-6 left-work-exp">
-            <div class="">
-              <div class="company-years">
-                <span>2016 - 2017</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-6 col-md-6 right-work-exp">
-            <div class="">
-              <div class="company-name">
-                Company name
-              </div>
-              <div class="work-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
@@ -119,69 +98,47 @@
     <div class="section-content">
       <div class="container">
         <div class="section-content">
-          <div class="row work-info">
-            <div class="col-xs-6 col-md-6 left-work-exp">
-              <div class="">
-                <div class="company-years">
-                  <span>2016 - 2017</span>
+          @foreach ($educations as $key => $education)
+            <div class="row work-info">
+              <div class="col-xs-6 col-md-6 left-work-exp">
+                <div class="">
+                  @if ( $loop->index % 2 == 0 )
+                    <div class="company-years">
+                      <span>{{ \Carbon\Carbon::parse($education->start)->format('Y/m') }} - {{ \Carbon\Carbon::parse($education->end)->format('Y/m') }}</span>
+                    </div>
+                  @else
+                    <div class="company-name">
+                      {{ $education->place }} {{ $loop->depth }}
+                    </div>
+                    <div class="work-description">
+                      {{ $education->description }}
+                    </div>
+                  @endif
+                </div>
+              </div>
+              <div class="col-xs-6 col-md-6 right-work-exp">
+                <div class="">
+                  @if ( $loop->index % 2 == 0 )
+                    <div class="company-name">
+                      {{ $education->place }}
+                    </div>
+                    <div class="work-description">
+                      {{ $education->description }}
+                    </div>
+                  @else
+                    <div class="company-years">
+                      <span>{{ \Carbon\Carbon::parse($education->start)->format('Y/m') }} - {{ \Carbon\Carbon::parse($education->end)->format('Y/m') }}</span>
+                    </div>
+                  @endif
                 </div>
               </div>
             </div>
-            <div class="col-xs-6 col-md-6 right-work-exp">
-              <div class="">
-                <div class="company-name">
-                  University
-                </div>
-                <div class="work-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row work-info">
-            <div class="col-xs-6 col-md-6 left-work-exp">
-              <div class="">
-                <div class="company-name">
-                  University
-                </div>
-                <div class="work-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-6 right-work-exp">
-              <div class="">
-                <div class="company-years">
-                  <span>2016 - 2017</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row work-info">
-            <div class="col-xs-6 col-md-6 left-work-exp">
-              <div class="">
-                <div class="company-years">
-                  <span>2016 - 2017</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-6 right-work-exp">
-              <div class="">
-                <div class="company-name">
-                  University
-                </div>
-                <div class="work-description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
   </section>
   <div class="add-line"></div>
-
 
   <section class="section latest-projects">
     <h1>latest projects</h1>
@@ -233,60 +190,32 @@
           <div class="col-md-6">
             <div class="skills-charts">
               <ul>
-                <li>
-                  <div class="skill-description">
-                    HTML
-                  </div>
-                  <div class="skill-progress-bar">
-                    <div class="skill-progress" style="width:100%"></div>
-                  </div>
-                </li>
-                <li>
-                  <div class="skill-description">
-                    CSS
-                  </div>
-                  <div class="skill-progress-bar">
-                    <div class="skill-progress" style="width:80%"></div>
-                  </div>
-                </li>
-                <li>
-                  <div class="skill-description">
-                    JS
-                  </div>
-                  <div class="skill-progress-bar">
-                    <div class="skill-progress" style="width:84%"></div>
-                  </div>
-                </li>
+                  @for ($i=0; $i < round(count($skills)/2); $i++)
+                    <li>
+                      <div class="skill-description">
+                        {{ $skills[$i]->skill }}
+                      </div>
+                      <div class="skill-progress-bar">
+                        <div class="skill-progress" style="width:{{ $skills[$i]->progress }}%"></div>
+                      </div>
+                    </li>
+                  @endfor
               </ul>
             </div>
           </div>
           <div class="col-md-6">
             <div class="skills-charts">
               <ul>
-                <li>
-                  <div class="skill-description">
-                    PHP
-                  </div>
-                  <div class="skill-progress-bar">
-                    <div class="skill-progress" style="width:96%"></div>
-                  </div>
-                </li>
-                <li>
-                  <div class="skill-description">
-                    MySQL
-                  </div>
-                  <div class="skill-progress-bar">
-                    <div class="skill-progress" style="width:78%"></div>
-                  </div>
-                </li>
-                <li>
-                  <div class="skill-description">
-                    Laravel
-                  </div>
-                  <div class="skill-progress-bar">
-                    <div class="skill-progress" style="width:65%"></div>
-                  </div>
-                </li>
+                @for ($i=round(count($skills)/2); $i < count($skills); $i++)
+                  <li>
+                    <div class="skill-description">
+                      {{ $skills[$i]->skill }}
+                    </div>
+                    <div class="skill-progress-bar">
+                      <div class="skill-progress" style="width:{{ $skills[$i]->progress }}%"></div>
+                    </div>
+                  </li>
+                @endfor
               </ul>
             </div>
           </div>

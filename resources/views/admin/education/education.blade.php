@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin_app')
 
 @section('content')
-  <h1 class="text-center">Skills</h1>
+  <h1 class="text-center">Education</h1>
   <div class="list-group">
     <div class="list-group-item header">
        <div class="row">

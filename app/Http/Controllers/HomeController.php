@@ -4,18 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Experience;
+use App\Models\Education;
+use App\Models\Skill;
+use App\Models\Project;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -24,6 +19,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+        $experiences = Experience::all();
+        $educations = Education::all();
+        $skills = Skill::all();
+        return view('pages.home', compact('experiences', 'educations', 'skills'));
     }
 }
