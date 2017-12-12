@@ -22,7 +22,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/projects', 'ProjectsController@index')->name('projects');
+
 Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog/{id}', 'BlogController@details')->name('blog.details');
+Route::post('/blog/{id}', 'BlogController@store_comment')->name('blog.store_comment');
+Route::delete('/blog/{id}', 'BlogController@destroy_comment')->name('blog.destroy_comment');
+
 Route::get('/contact', 'ContactController@index')->name('contact');
 
 // Admin routes

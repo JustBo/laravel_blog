@@ -12,13 +12,13 @@
 </div>
 <div class="form-group">
   {!! Form::label('body', 'Body:'); !!}
-  {!! Form::textarea('body', null , ['class' => 'form-control']) !!}
+  {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group toggle-button">
   Active:
-  {!! Form::checkbox('active', '0', true, ['class' => 'hidden']) !!}
+  {!! Form::checkbox('active', '0', null, ['class' => 'hidden']) !!}
   <label class="switch">
-    {!! Form::checkbox('active', '1', true) !!}
+    {!! Form::checkbox('active', '1', null) !!}
     <span class="slider round"></span>
   </label>
 </div>

@@ -11764,6 +11764,14 @@ ul {
   background-color: #E3E3E3;
 }
 
+.blog-inner {
+  padding-top: 60px;
+}
+
+.post-body {
+  min-height: 300px;
+}
+
 footer {
   background-color: #36393a;
   text-align: center;
