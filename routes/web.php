@@ -57,6 +57,12 @@ Route::prefix('admin')->group(function () {
       Route::delete('/categories/{id}', 'Admin\CategoryController@destroy')->name('admin.category.destroy');
 
       Route::get('/skills', 'Admin\SkillsController@index')->name('admin.skills');
+      Route::get('/skills/create', 'Admin\SkillsController@create')->name('admin.skills.create');
+      Route::get('/skills/{id}', 'Admin\SkillsController@edit')->name('admin.skills.edit');
+      Route::post('/skills/create', 'Admin\SkillsController@store')->name('admin.skills.store');
+      Route::post('/skills/{id}', 'Admin\SkillsController@update')->name('admin.skills.update');
+      Route::delete('/skills/{id}', 'Admin\SkillsController@destroy')->name('admin.skills.destroy');
+
       Route::get('/education', 'Admin\EducationController@index')->name('admin.education');
       Route::get('/experience', 'Admin\ExperienceController@index')->name('admin.experience');
       //administrations routes
