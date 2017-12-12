@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Education extends Model
 {
-    //
+  protected $fillable = [
+    'place',
+    'start',
+    'end',
+    'description'
+  ];
 }

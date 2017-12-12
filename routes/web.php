@@ -64,7 +64,19 @@ Route::prefix('admin')->group(function () {
       Route::delete('/skills/{id}', 'Admin\SkillsController@destroy')->name('admin.skills.destroy');
 
       Route::get('/education', 'Admin\EducationController@index')->name('admin.education');
+      Route::get('/education/create', 'Admin\EducationController@create')->name('admin.education.create');
+      Route::get('/education/{id}', 'Admin\EducationController@edit')->name('admin.education.edit');
+      Route::post('/education/create', 'Admin\EducationController@store')->name('admin.education.store');
+      Route::post('/education/{id}', 'Admin\EducationController@update')->name('admin.education.update');
+      Route::delete('/education/{id}', 'Admin\EducationController@destroy')->name('admin.education.destroy');
+
+
       Route::get('/experience', 'Admin\ExperienceController@index')->name('admin.experience');
+      Route::get('/experience/create', 'Admin\ExperienceController@create')->name('admin.experience.create');
+      Route::get('/experience/{id}', 'Admin\ExperienceController@edit')->name('admin.experience.edit');
+      Route::post('/experience/create', 'Admin\ExperienceController@store')->name('admin.experience.store');
+      Route::post('/experience/{id}', 'Admin\ExperienceController@update')->name('admin.experience.update');
+      Route::delete('/experience/{id}', 'Admin\ExperienceController@destroy')->name('admin.experience.destroy');
       //administrations routes
       Route::get('/user', 'Admin\UserController@index')->name('admin.user');
     });
