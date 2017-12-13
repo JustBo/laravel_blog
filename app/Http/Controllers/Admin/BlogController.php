@@ -49,7 +49,7 @@ class BlogController extends Controller
   public function store(StoreBlog $request){
     $blog = Blog::create( $request->input() );
     $blog->categories()->sync($request->input('category_list'));
-    return redirect()->route('admin.blog');
+    return redirect()->route('admin.blog.index');
   }
   /**
    * Update the specified resource in storage.
@@ -62,7 +62,7 @@ class BlogController extends Controller
     $blog = Blog::findOrFail($id);
     $blog->update( $request->input() );
     $blog->categories()->sync($request->input('category_list'));
-    return redirect()->route('admin.blog');
+    return redirect()->route('admin.blog.index');
   }
   /**
    * Remove the specified resource from storage.
@@ -74,6 +74,6 @@ class BlogController extends Controller
   {
       $blog = Blog::findOrFail($id);
       $blog->delete();
-      return redirect()->route('admin.blog');
+      return redirect()->route('admin.blog.index');
   }
 }

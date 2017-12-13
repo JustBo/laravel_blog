@@ -49,7 +49,7 @@ class ProjectsController extends Controller
   public function store(StoreProject $request){
     $project = Project::create( $request->input() );
     $project->categories()->sync($request->input('category_list'));
-    return redirect()->route('admin.projects');
+    return redirect()->route('admin.projects.index');
   }
   /**
    * Update the specified resource in storage.
@@ -62,7 +62,7 @@ class ProjectsController extends Controller
     $project = Project::findOrFail($id);
     $project->update( $request->input() );
     $project->categories()->sync($request->input('category_list'));
-    return redirect()->route('admin.projects');
+    return redirect()->route('admin.projects.index');
   }
   /**
    * Remove the specified resource from storage.
@@ -74,6 +74,6 @@ class ProjectsController extends Controller
   {
       $project = Project::findOrFail($id);
       $project->delete();
-      return redirect()->route('admin.projects');
+      return redirect()->route('admin.projects.index');
   }
 }

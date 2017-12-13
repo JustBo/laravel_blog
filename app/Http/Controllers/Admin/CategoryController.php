@@ -44,7 +44,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategory $request){
       Category::create( $request->input() );
-      return redirect()->route('admin.categories');
+      return redirect()->route('admin.category.index');
     }
     /**
      * Update the specified resource in storage.
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     public function update(StoreCategory $request, $id){
       $category = Category::findOrFail( $id );
       $category->update( $request->input() );
-      return redirect()->route('admin.categories');
+      return redirect()->route('admin.category.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -70,6 +70,6 @@ class CategoryController extends Controller
         $category->blogs()->delete();
         $category->projects()->delete();
         $category->delete();
-        return redirect()->route('admin.categories');
+        return redirect()->route('admin.category.index');
     }
 }

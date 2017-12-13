@@ -45,7 +45,7 @@ class ExperienceController extends Controller
    */
   public function store(StoreExperience $request){
     $experience = Experience::create( $request->input() );
-    return redirect()->route('admin.experience');
+    return redirect()->route('admin.experience.index');
   }
   /**
    * Update the specified resource in storage.
@@ -57,7 +57,7 @@ class ExperienceController extends Controller
   public function update(StoreExperience $request, $id){
     $experience = Experience::findOrFail($id);
     $experience->update( $request->input() );
-    return redirect()->route('admin.experience');
+    return redirect()->route('admin.experience.index');
   }
   /**
    * Remove the specified resource from storage.
@@ -69,6 +69,6 @@ class ExperienceController extends Controller
   {
       $experience = Experience::findOrFail($id);
       $experience->delete();
-      return redirect()->route('admin.experience');
+      return redirect()->route('admin.experience.index');
   }
 }

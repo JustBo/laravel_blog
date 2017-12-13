@@ -45,7 +45,7 @@ class EducationController extends Controller
    */
   public function store(StoreEducation $request){
     $education = Education::create( $request->input() );
-    return redirect()->route('admin.education');
+    return redirect()->route('admin.education.index');
   }
   /**
    * Update the specified resource in storage.
@@ -57,7 +57,7 @@ class EducationController extends Controller
   public function update(StoreEducation $request, $id){
     $education = Education::findOrFail($id);
     $education->update( $request->input() );
-    return redirect()->route('admin.education');
+    return redirect()->route('admin.education.index');
   }
   /**
    * Remove the specified resource from storage.
@@ -69,6 +69,6 @@ class EducationController extends Controller
   {
       $education = Education::findOrFail($id);
       $education->delete();
-      return redirect()->route('admin.education');
+      return redirect()->route('admin.education.index');
   }
 }

@@ -45,7 +45,7 @@ class SkillsController extends Controller
      */
     public function store(StoreSkill $request){
       $skill = Skill::create( $request->input() );
-      return redirect()->route('admin.skills');
+      return redirect()->route('admin.skills.index');
     }
     /**
      * Update the specified resource in storage.
@@ -57,7 +57,7 @@ class SkillsController extends Controller
     public function update(StoreSkill $request, $id){
       $skill = Skill::findOrFail($id);
       $skill->update( $request->input() );
-      return redirect()->route('admin.skills');
+      return redirect()->route('admin.skills.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -69,7 +69,7 @@ class SkillsController extends Controller
     {
         $skill = Skill::findOrFail($id);
         $skill->delete();
-        return redirect()->route('admin.skills');
+        return redirect()->route('admin.skills.index');
     }
 
 }

@@ -7,12 +7,12 @@
       Content
     </div>
     <ul>
-      <li><a href="{{ route('admin.blog') }}">Blog</a></li>
-      <li><a href="{{ route('admin.projects') }}">Projects</a></li>
-      <li><a href="{{ route('admin.categories') }}">Categories</a></li>
-      <li><a href="{{ route('admin.skills') }}">Skills</a></li>
-      <li><a href="{{ route('admin.education') }}">Education</a></li>
-      <li><a href="{{ route('admin.experience') }}">Experience</a></li>
+      <li><a href="{{ route('admin.blog.index') }}">Blog</a></li>
+      <li><a href="{{ route('admin.projects.index') }}">Projects</a></li>
+      <li><a href="{{ route('admin.category.index') }}">Categories</a></li>
+      <li><a href="{{ route('admin.skills.index') }}">Skills</a></li>
+      <li><a href="{{ route('admin.education.index') }}">Education</a></li>
+      <li><a href="{{ route('admin.experience.index') }}">Experience</a></li>
     </ul>
   </section>
   <section class="section-admin">
