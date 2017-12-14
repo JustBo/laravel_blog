@@ -7,7 +7,7 @@
       @foreach ($blogs as $blog)
         <div class="row post">
           <div class="col-md-6">
-            {{ $blog->icon }}
+            <img src="{{ asset('/storage/images/blog/'.$blog->icon) }}" alt="blog-photo">
           </div>
           <div class="col-md-6">
             <div class="post-info">

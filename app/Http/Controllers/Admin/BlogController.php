@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Http\Requests\StoreBlog;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class BlogController extends Controller
 {
@@ -47,7 +49,25 @@ class BlogController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function store(StoreBlog $request){
-    $blog = Blog::create( $request->input() );
+    // Get file
+    $file = $request->file('icon');
+    // Get filename with extension
+    $filenameWithExt = $file->getClientOriginalName();
+    // Get file name
+    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+    // Get extension
+    $extension = $file->getClientOriginalExtension();
+    // Create new filename
+    $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+    $icon = Image::make($file)->resize(800,600);
+    $path = Storage::put('public/images/blog/'.$filenameToStore, $icon->stream());
+
+    $inputs = $request->input();
+    $inputs['icon'] = $filenameToStore;
+
+    $blog = Blog::create( $inputs );
+
     $blog->categories()->sync($request->input('category_list'));
     return redirect()->route('admin.blog.index');
   }

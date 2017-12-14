@@ -8,10 +8,13 @@
          <div class="col-md-1">
            Id
          </div>
+         <div class="col-md-1">
+           Icon
+         </div>
          <div class="col-md-4">
            Title
          </div>
-         <div class="col-md-4">
+         <div class="col-md-3">
            Description
          </div>
          <div class="col-md-2">
@@ -25,10 +28,13 @@
           <div class="col-md-1">
             {{ $blog->id }}
           </div>
+          <div class="col-md-1">
+            <img src="{{ asset('/storage/images/blog/'.$blog->icon) }}" alt="blog-photo">
+          </div>
           <div class="col-md-4">
             {{ $blog->title }}
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             {{ $blog->description }}
           </div>
           <div class="col-md-2">

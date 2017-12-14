@@ -11597,3 +11597,8 @@ ul {
   border-radius: 50%;
 }
 
+.item img {
+  width: 75px;
+  height: 45px;
+}
+

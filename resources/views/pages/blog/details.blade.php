@@ -4,6 +4,7 @@
   <div class="container details">
     <div class="blog-inner">
       <h2>{{ $blog->title }}</h2>
+      <img src="{{ asset('/storage/images/blog/'.$blog->icon) }}" alt="blog-photo">
       {{ $blog->categories->first()->name }}
       <div class="post-body">
         {{ $blog->body }}
