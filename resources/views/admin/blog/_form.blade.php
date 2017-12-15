@@ -6,6 +6,11 @@
   {!! Form::label('description', 'Description:'); !!}
   {!! Form::text('description', null , ['class' => 'form-control']) !!}
 </div>
+@if ($submit_button == "Update")
+  <div class="form-group">
+    <img src="{{ asset('/storage/images/blog/'.$blog->icon) }}" alt="blog-photo">
+  </div>
+@endif
 <div class="form-group">
   {!! Form::label('icon', 'Icon:'); !!}
   {!! Form::file('icon', ['class' => 'form-control']) !!}

@@ -27,7 +27,6 @@ class StoreBlog extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'body' => 'required',
-            'icon' => 'required',
             'active' => 'required',
             'category_list' => 'required'
         ];

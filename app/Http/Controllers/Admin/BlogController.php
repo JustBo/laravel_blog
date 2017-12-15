@@ -7,8 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Http\Requests\StoreBlog;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManagerStatic as Image;
+use App\Services\ImageUploadService;
 
 class BlogController extends Controller
 {
@@ -49,19 +48,8 @@ class BlogController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function store(StoreBlog $request){
-    // Get file
-    $file = $request->file('icon');
-    // Get filename with extension
-    $filenameWithExt = $file->getClientOriginalName();
-    // Get file name
-    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-    // Get extension
-    $extension = $file->getClientOriginalExtension();
-    // Create new filename
-    $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-    $icon = Image::make($file)->resize(800,600);
-    $path = Storage::put('public/images/blog/'.$filenameToStore, $icon->stream());
+    $filenameToStore = ImageUploadService::upload( $request, 'icon', 'public/images/blog' );
 
     $inputs = $request->input();
     $inputs['icon'] = $filenameToStore;
@@ -79,8 +67,15 @@ class BlogController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function update(StoreBlog $request, $id){
+
     $blog = Blog::findOrFail($id);
-    $blog->update( $request->input() );
+
+    $filenameToStore = ImageUploadService::upload( $request, 'icon', 'public/images/blog', $blog->icon );
+
+    $inputs = $request->input();
+    $inputs['icon'] = $filenameToStore;
+
+    $blog->update( $inputs );
     $blog->categories()->sync($request->input('category_list'));
     return redirect()->route('admin.blog.index');
   }
@@ -93,6 +88,7 @@ class BlogController extends Controller
   public function destroy($id)
   {
       $blog = Blog::findOrFail($id);
+      ImageUploadService::delete( 'public/images/blog', $blog->icon );
       $blog->delete();
       return redirect()->route('admin.blog.index');
   }
