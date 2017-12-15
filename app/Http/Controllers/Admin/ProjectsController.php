@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Category;
 use App\Http\Requests\StoreProject;
+use App\Services\ImageUploadService;
 
 class ProjectsController extends Controller
 {
@@ -47,7 +48,13 @@ class ProjectsController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function store(StoreProject $request){
-    $project = Project::create( $request->input() );
+
+    $filenameToStore = ImageUploadService::upload( $request, 'icon', 'public/images/projects' );
+
+    $inputs = $request->input();
+    $inputs['icon'] = $filenameToStore;
+
+    $project = Project::create( $inputs );
     $project->categories()->sync($request->input('category_list'));
     return redirect()->route('admin.projects.index');
   }
@@ -59,8 +66,15 @@ class ProjectsController extends Controller
    * @return \Illuminate\Http\Response
    */
   public function update(StoreProject $request, $id){
+
     $project = Project::findOrFail($id);
-    $project->update( $request->input() );
+
+    $filenameToStore = ImageUploadService::upload( $request, 'icon', 'public/images/projects', $project->icon );
+
+    $inputs = $request->input();
+    $inputs['icon'] = $filenameToStore;
+
+    $project->update( $inputs );
     $project->categories()->sync($request->input('category_list'));
     return redirect()->route('admin.projects.index');
   }
@@ -73,6 +87,7 @@ class ProjectsController extends Controller
   public function destroy($id)
   {
       $project = Project::findOrFail($id);
+      ImageUploadService::delete( 'public/images/projects', $project->icon );
       $project->delete();
       return redirect()->route('admin.projects.index');
   }
