@@ -14,6 +14,7 @@
       @foreach ($comments as $comment)
         <div class="row user-comment">
           <div class="col-md-3">
+            <img src="{{ $comment->user->icon }}" class="user-avatar" alt="user-avatar">
             Avatar{{ $comment->user_id }}
             <div>{{ $comment->user->name }}</div>
             {{-- {{ $comment->user_id }} --}}

@@ -11776,6 +11776,11 @@ img {
   min-height: 300px;
 }
 
+.user-avatar {
+  width: 100px;
+  border-radius: 50%;
+}
+
 footer {
   background-color: #36393a;
   text-align: center;

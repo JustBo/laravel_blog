@@ -29,6 +29,7 @@ class SocialFacebookAccountService
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
+                    'icon' => $providerUser->getAvatar(),
                     'password' => md5(rand(1,10000)),
                 ]);
             }
