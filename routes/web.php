@@ -47,5 +47,6 @@ Route::prefix('admin')->group(function () {
       Route::resource('experience', 'Admin\ExperienceController', ['as'=>'admin']);
       //administrations routes
       Route::get('/user', 'Admin\UserController@index')->name('admin.user');
+      Route::delete('/user/{id}/destroy', 'Admin\UserController@destroy')->name('admin.user.destroy');
     });
 });
