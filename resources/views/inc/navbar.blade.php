@@ -22,8 +22,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (!Auth::check())
-          <li class="{{Request::is('login') ? 'active' : ''}}"><a href="{{ route('login') }}">Login</a></li>
-          <li class="{{Request::is('register') ? 'active' : ''}}"><a href="{{ route('register') }}">Register</a></li>
+          <li class="{{Request::is('login') ? 'active' : ''}}"><a href="#" data-toggle="modal" data-target="#loginmodal">Login</a></li>
+          <li class="{{Request::is('register') ? 'active' : ''}}"><a href="#" data-toggle="modal" data-target="#registermodal">Register</a></li>
         @else
           <li class="{{Request::is('user.logout') ? 'active' : ''}}"><a href="{{ route('user.logout') }}">Logout</a></li>
         @endif

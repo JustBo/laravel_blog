@@ -10,7 +10,9 @@
     @include('inc.navbar')
     <main>
       @yield('content')
+      @include('inc.modals')
     </main>
+
     @include('inc.footer')
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('javascript')

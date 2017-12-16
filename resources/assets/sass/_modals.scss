@@ -1,0 +1,63 @@
+.modal-open{
+  #loginmodal,#registermodal{
+
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    //
+    .modal-dialog{
+      transform: translate(0, 100%);
+      background-color: rgba(27, 35, 47, 0.45);
+      color:white;
+    }
+  }
+  a.facebook-login{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #3b5999;
+    color:white;
+    position:relative;
+    &:hover{
+      text-decoration: none;
+      background-color: #283d68;
+    }
+    span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: #283d68;
+    }
+  }
+  input{
+    background-color: rgba(0,0,0,0);
+    border:none;
+    border-bottom:1px solid white;
+    border-radius:0;
+    color:white;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+  .login-btn{
+    width:65%;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid white;
+    &:hover{
+      background-color:white;
+      color: $common-color;
+    }
+  }
+  .register-btn{
+    margin-bottom:15px;
+  }
+  .panel-heading {
+    font-size: 21px;
+    font-weight: bold;
+  }
+}

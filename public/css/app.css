@@ -11860,3 +11860,74 @@ footer .contact-mail {
   margin-top: 15px;
 }
 
+.modal-open #loginmodal .modal-dialog,
+.modal-open #registermodal .modal-dialog {
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  background-color: rgba(27, 35, 47, 0.45);
+  color: white;
+}
+
+.modal-open a.facebook-login {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #3b5999;
+  color: white;
+  position: relative;
+}
+
+.modal-open a.facebook-login:hover {
+  text-decoration: none;
+  background-color: #283d68;
+}
+
+.modal-open a.facebook-login span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background-color: #283d68;
+}
+
+.modal-open input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  color: white;
+}
+
+.modal-open input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.modal-open .login-btn {
+  width: 65%;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.modal-open .login-btn:hover {
+  background-color: white;
+  color: #1b242f;
+}
+
+.modal-open .register-btn {
+  margin-bottom: 15px;
+}
+
+.modal-open .panel-heading {
+  font-size: 21px;
+  font-weight: bold;
+}
+
