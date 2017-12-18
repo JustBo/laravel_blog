@@ -7,6 +7,7 @@ use App\Http\Requests\StoreComment;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Category;
 
 class BlogController extends Controller
 {
@@ -18,7 +19,10 @@ class BlogController extends Controller
   public function index()
   {
     $blogs = Blog::with(['categories', 'comments'])->where('active', 1)->get();
-    return view('pages.blog.blog', compact('blogs'));
+    $categories = Category::whereHas('blogs', function($q){
+      $q->where('active', 1);
+    })->get();
+    return view('pages.blog.blog', compact('blogs', 'categories'));
   }
   /**
    * Show the post details.
