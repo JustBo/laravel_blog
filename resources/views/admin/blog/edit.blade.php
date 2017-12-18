@@ -7,3 +7,10 @@
     @include('admin.blog._form', ['submit_button' => 'Update'])
   {!! Form::close() !!}
 @endsection
+
+@section('scripts')
+  <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+  <script>
+    CKEDITOR.replace('summary-ckeditor')
+  </script>
+@endsection

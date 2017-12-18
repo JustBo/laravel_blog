@@ -17,7 +17,7 @@
 </div>
 <div class="form-group">
   {!! Form::label('body', 'Body:'); !!}
-  {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+  {!! Form::textarea('body', null, ['id' => 'summary-ckeditor', 'class' => 'form-control']) !!}
 </div>
 <div class="form-group toggle-button">
   Active:

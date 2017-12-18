@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin dashboard</title>
     <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/admin/app.js') }}" type="text/javascript"></script>
   </head>
   <body>
     @include('admin.inc.sidebar')
@@ -13,5 +14,6 @@
           @yield('content')
       </div>
     </div>
+    @yield('scripts')
   </body>
 </html>
