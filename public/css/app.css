@@ -11770,11 +11770,30 @@ img {
 
 .post-body {
   min-height: 300px;
+  padding-top: 30px;
 }
 
 .user-avatar {
-  width: 100px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100px;
   border-radius: 50%;
+}
+
+.user-comment {
+  padding: 10px;
+  border-bottom: 1px dashed #1b242f;
+  color: #1b242f;
+}
+
+.user-name,
+.user-comment-time {
+  font-size: 14px;
+}
+
+.user-comment-textarea {
+  padding: 10px;
 }
 
 .blog-inner {
@@ -11847,6 +11866,38 @@ img {
 
 .blog-inner .post-description {
   padding: 10px;
+}
+
+.blog-inner .sub-post-info {
+  margin-bottom: 10px;
+}
+
+.blog-inner .blog-details-image {
+  position: relative;
+}
+
+.blog-inner .blog-details-image img {
+  display: block;
+  height: 550px;
+}
+
+.blog-inner .blog-details-image::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(27, 36, 47, 0.17);
+}
+
+.btn-add {
+  background-color: #36393a;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #1b242f;
+  color: white;
 }
 
 footer {

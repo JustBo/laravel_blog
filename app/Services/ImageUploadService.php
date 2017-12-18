@@ -22,7 +22,7 @@ class ImageUploadService
           // Create new filename
           $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-          $icon = Image::make($file)->resize(800,600);
+          $icon = Image::make($file)->resize(1024,600);
           $created_path = Storage::put($path.'/'.$filenameToStore, $icon->stream());
 
           if( $existedPath != null && $existedPath != 'default.jpg' ){
