@@ -148,30 +148,23 @@
     <div class="section-content">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <div class="project-item">
-              <img src="http://www.computerscience.org/wp-content/uploads/2015/10/icon-computer-desk.svg" alt="project1">
-              <div class="project-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
+          @foreach ($projects as $key => $project)
+            <div class="col-md-4">
+              <div class="project-item">
+                <div class="image-container project-icon">
+                  <img src=" {{ asset('storage/images/projects/'.$project->icon) }} " alt="project1">
+                  <a href="{{ route('project.details', ['id' => $project->id]) }}">
+                    <span class="project-icon-popup">
+                      {{ $project->title }}
+                    </span>
+                  </a>
+                </div>
+                <div class="project-description">
+                  <a href="{{ route('project.details', ['id' => $project->id]) }}">{{ $project->description }}</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="project-item">
-              <img src="http://www.computerscience.org/wp-content/uploads/2015/10/icon-computer-desk.svg" alt="project2">
-              <div class="project-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="project-item">
-              <img src="http://www.computerscience.org/wp-content/uploads/2015/10/icon-computer-desk.svg" alt="project3">
-              <div class="project-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>

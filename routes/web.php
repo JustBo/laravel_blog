@@ -21,7 +21,9 @@ Route::get('/callback', 'Auth\SocialAuthFacebookController@callback')->name('fac
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
+
 Route::get('/projects', 'ProjectsController@index')->name('projects');
+Route::get('/projects/{id}', 'ProjectsController@details')->name('project.details');
 
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{id}', 'BlogController@details')->name('blog.details');

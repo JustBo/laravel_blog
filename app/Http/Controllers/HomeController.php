@@ -19,9 +19,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $experiences = Experience::all();
-        $educations = Education::all();
+        $experiences = Experience::all()->sortByDesc('id');
+        $educations = Education::all()->sortByDesc('id');
         $skills = Skill::all();
-        return view('pages.home', compact('experiences', 'educations', 'skills'));
+        $projects = Project::where('active', 1)->latest()->limit(3)->get();
+
+        return view('pages.home', compact('experiences', 'educations', 'skills', 'projects'));
     }
 }

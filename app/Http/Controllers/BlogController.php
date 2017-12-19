@@ -18,7 +18,7 @@ class BlogController extends Controller
    */
   public function index()
   {
-    $blogs = Blog::with(['categories', 'comments'])->where('active', 1)->get();
+    $blogs = Blog::with(['categories', 'comments'])->where('active', 1)->latest()->get();
     $categories = Category::whereHas('blogs', function($q){
       $q->where('active', 1);
     })->get();
