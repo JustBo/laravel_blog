@@ -29,6 +29,9 @@
               <div class="form-group">
                 {!! Form::textarea('description', null , ['class' => 'form-control contact-input', 'placeholder' => 'Write me about any project. I\'d love to work with you']) !!}
               </div>
+              <div class="form-group">
+                {!! Form::submit('Send', ['class' => 'btn form-control btn-add']) !!}
+              </div>
             {!! Form::close() !!}
           </div>
         </div>

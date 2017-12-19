@@ -4,10 +4,10 @@
       <a href="{{ route('contact') }}">hire me</a>
     </div>
     <div class="contact-mail">
-      <a href="mailto: b.tsybulskyy@gmail.com" class="fx-fill">b.tsybulskyy@gmail.com</a>
+      <a href="mailto:b.tsybulskyy@gmail.com" class="fx-fill">b.tsybulskyy@gmail.com</a>
     </div>
     <div class="contact-phone">
-      <a href="tel: +380 93 877 28 50">+380 93 877 28 50</a>
+      <a href="tel:+380938772850">+380 93 877 28 50</a>
     </div>
     <div class="social-buttons">
       <ul>

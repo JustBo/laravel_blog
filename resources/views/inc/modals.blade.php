@@ -1,4 +1,4 @@
-<div id="registermodal" class="modal fade" role="dialog1">
+<div id="registermodal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     @include('auth.register')

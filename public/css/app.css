@@ -12004,6 +12004,14 @@ img {
   text-decoration: none;
 }
 
+.contact-wrap .btn-add {
+  background-color: rgba(27, 36, 47, 0.67);
+}
+
+.contact-wrap .btn-add:hover {
+  background-color: #1b242f;
+}
+
 .contact-input {
   background-color: rgba(27, 36, 47, 0.67);
   color: white;
