@@ -1,7 +1,7 @@
 <div class="row user-comment-textarea">
   <div class="col-xs-2 col-md-2">
-    <img src="{{ $comment->user->icon }}" class="user-avatar" alt="user-avatar">
-    <div class="user-name text-center">{{ $comment->user->name }}</div>
+    <img src="{{ Auth::user()->icon }}" class="user-avatar" alt="user-avatar">
+    <div class="user-name text-center">{{ Auth::user()->name }}</div>
   </div>
   <div class="col-xs-9 col-md-9">
     {!! Form::open(['route' => ['blog.store_comment', 'id' => $blog->id]]) !!}

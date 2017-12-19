@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container details">
-    <div class="blog-inner">
+    <div class="blog-inner blog-detail">
       <h2 class="text-center">{{ $blog->title }}</h2>
       <div class="sub-post-info text-center">
         {{ $blog->categories->first()->name }}
@@ -12,7 +12,7 @@
       <div class="blog-details-image">
         <img src="{{ asset('/storage/images/blog/'.$blog->icon) }}" alt="blog-photo">
       </div>
-      <div class="post-description">
+      <div class="post-description text-center">
         {{ $blog->description }}
       </div>
       <div class="post-body">
@@ -45,7 +45,7 @@
     @if (Auth::user())
       @include('pages.blog.comment_form')
     @else
-      Login for living comment
+      <p class="well well-sm">Login for living comment</p>
     @endif
   </div>
 @endsection

@@ -27,15 +27,15 @@
     border-bottom: 1px solid $common-color;
     border-top: 1px solid $common-color;
     margin: 15px 0;
-  }
-  li{
-    display:inline-block;
-    padding:10px;
-    cursor: pointer;
-    text-transform: capitalize;
-    &:hover{
-      background-color: $common-color;
-      color:white;
+    li{
+      display:inline-block;
+      padding:10px;
+      cursor: pointer;
+      text-transform: capitalize;
+      &:hover{
+        background-color: $common-color;
+        color:white;
+      }
     }
   }
   .image-container{
@@ -87,13 +87,16 @@
     img{
       display:block;
       height:550px;
+      width: 90%;
+      margin: 0 auto;
     }
     &::after{
       content:'';
       position: absolute;
-      width: 100%;
+      width: 90%;
       height: 100%;
       top: 0;
+      left: 5%;
       background-color: rgba(27, 36, 47, 0.17);
     }
   }
@@ -111,6 +114,9 @@
   //     }
   //   }
   // }
+}
+.blog-detail{
+  background-color: white;
 }
 .btn-add{
   background-color: #36393a;
