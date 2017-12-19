@@ -65,29 +65,29 @@ ul{
       flex:1;
     }
   }
-  .social-buttons{
-    flex:1;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    p{
-      font-size: 20px;
-      font-weight: bold;
-    }
-    ul{
-      padding:5px;
-      width:100%;
-      li{
-        display:inline-block;
-        &:not(:last-child){
-          margin-right:20px;
-        }
+}
+.social-buttons{
+  flex:1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  ul{
+    padding:5px;
+    width:100%;
+    li{
+      display:inline-block;
+      &:not(:last-child){
+        margin-right:20px;
       }
     }
-    i{
-      font-size:32px;
-      color:$common-color;
-    }
+  }
+  i{
+    font-size:32px;
+    color:$common-color;
   }
 }
 .section{

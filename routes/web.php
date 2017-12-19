@@ -20,7 +20,6 @@ Route::get('/callback', 'Auth\SocialAuthFacebookController@callback')->name('fac
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/about', 'AboutController@index')->name('about');
 
 Route::get('/projects', 'ProjectsController@index')->name('projects');
 Route::get('/projects/{id}', 'ProjectsController@details')->name('project.details');
@@ -31,6 +30,7 @@ Route::post('/blog/{id}', 'BlogController@store_comment')->name('blog.store_comm
 Route::delete('/blog/{id}', 'BlogController@destroy_comment')->name('blog.destroy_comment');
 
 Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', 'ContactController@send')->name('contact.send');
 
 // Admin routes
 Route::prefix('admin')->group(function () {

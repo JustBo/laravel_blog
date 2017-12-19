@@ -45,7 +45,7 @@
     @if (Auth::user())
       @include('pages.blog.comment_form')
     @else
-      <p class="well well-sm">Login for living comment</p>
+      <p class="well well-sm">Please login for living comment</p>
     @endif
   </div>
 @endsection
