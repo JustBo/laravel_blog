@@ -16,12 +16,12 @@ class Auth{
     console.log(axios);
     var instance = axios.create({
       headers: {
-        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
     });
     instance.post('/login', {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
+      email: $('#email').val(),
+      password: $('#password').val()
     })
     .then(function (response) {
       console.log(response);

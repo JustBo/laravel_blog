@@ -17,6 +17,8 @@ Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logou
 Route::get('/redirect', 'Auth\SocialAuthFacebookController@redirect')->name('facebook.redirect');
 Route::get('/callback', 'Auth\SocialAuthFacebookController@callback')->name('facebook.callback');
 
+Route::post('/login', 'Auth\LoginController@postLogin')->name('api.login');
+
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,5 +1,6 @@
 <div class="panel-heading text-center">Login</div>
-<form id="loginform" class="form-horizontal" method="POST" action="{{ route('login') }}">
+<form id="loginform" class="form-horizontal" method="POST" action="{{ route('api.login') }}">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
         <div class="col-md-12">
             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail" required autofocus>
