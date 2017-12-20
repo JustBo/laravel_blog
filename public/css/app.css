@@ -11442,6 +11442,7 @@ body {
   font-size: 16px;
   background-color: #E3E3E3;
   height: 100%;
+  overflow-y: scroll;
 }
 
 main {
@@ -11459,6 +11460,11 @@ footer {
   height: 229px;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1b242f inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -11473,6 +11479,7 @@ ul {
 
 .main-image {
   height: 100vh;
+  position: relative;
 }
 
 .main-image img {
@@ -11518,6 +11525,19 @@ ul {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  padding-top: 50px;
+}
+
+.aboutme .social-buttons {
+  padding-top: 50px;
+}
+
+.aboutme .social-buttons i {
+  font-size: 39px;
+}
+
+.aboutme .social-buttons i:hover {
+  color: #36393a;
 }
 
 .social-buttons {
@@ -11761,6 +11781,10 @@ ul {
   margin-top: 50px;
 }
 
+.latest-projects .project-item {
+  margin-top: 20px;
+}
+
 .latest-projects .project-description {
   margin-top: 30px;
 }
@@ -11822,6 +11846,10 @@ ul {
 
 img {
   width: 100%;
+}
+
+.modal-open .navbar-fixed-top {
+  width: calc(100% - 17px);
 }
 
 .post-body {
@@ -12181,6 +12209,23 @@ footer .contact-mail {
   color: white;
 }
 
+.modal-open #loginmodal input,
+.modal-open #registermodal input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.modal-open #loginmodal input:focus,
+.modal-open #registermodal input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .modal-open a.facebook-login {
   width: 100%;
   display: block;
@@ -12211,21 +12256,8 @@ footer .contact-mail {
   background-color: #283d68;
 }
 
-.modal-open input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid white;
-  border-radius: 0;
-  color: white;
-}
-
-.modal-open input:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
 .modal-open .login-btn {
-  width: 65%;
+  width: 80%;
   background-color: transparent;
   border: 1px solid white;
 }

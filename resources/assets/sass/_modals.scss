@@ -10,6 +10,18 @@
       background-color: rgba(27, 35, 47, 0.45);
       color:white;
     }
+    input{
+      background-color: rgba(0,0,0,0);
+      border:none;
+      border-bottom:1px solid white;
+      border-radius:0;
+      color:white;
+      &:focus{
+        box-shadow: none;
+      }
+      width:80%;
+      margin: 0 auto;
+    }
   }
   a.facebook-login{
     width: 100%;
@@ -34,18 +46,8 @@
       background-color: #283d68;
     }
   }
-  input{
-    background-color: rgba(0,0,0,0);
-    border:none;
-    border-bottom:1px solid white;
-    border-radius:0;
-    color:white;
-    &:focus{
-      box-shadow: none;
-    }
-  }
   .login-btn{
-    width:65%;
+    width:80%;
     background-color: rgba(0,0,0,0);
     border: 1px solid white;
     &:hover{

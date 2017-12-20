@@ -8,10 +8,12 @@ body{
   font-size:16px;
   background-color: $body-bg;
   height: 100%;
+  overflow-y: scroll;
 }
 main{
   min-height: 100%;
   margin-bottom: -229px;
+  // position:relative;
   &:after{
     content: "";
     display: block;
@@ -20,6 +22,10 @@ main{
 main:after,
 footer{
   height:229px;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $common-color inset !important;
+    -webkit-text-fill-color: white !important;
 }
 ul{
   list-style: none;
@@ -34,6 +40,7 @@ ul{
 }
 .main-image{
   height:100vh;
+  position: relative;
   img{
     width:100%;
     height:inherit;
@@ -63,6 +70,16 @@ ul{
     p{
       line-height: 2;
       flex:1;
+      padding-top: 50px;
+    }
+  }
+  .social-buttons{
+    padding-top:50px;
+    i{
+      font-size: 39px;
+      &:hover{
+        color: #36393a;
+      }
     }
   }
 }
@@ -259,7 +276,7 @@ ul{
     margin-top: 50px;
   }
   .project-item{
-
+    margin-top: 20px;
   }
   .project-description{
     margin-top:30px;
@@ -313,4 +330,9 @@ ul{
 }
 img{
   width:100%;
+}
+.modal-open{
+  .navbar-fixed-top{
+    width: calc(100% - 17px);
+  }
 }
