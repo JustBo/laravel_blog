@@ -11618,6 +11618,22 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;
+  background-attachment: fixed;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.work-experience::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -90%;
+  right: 0;
+  background-color: #e3e3e3;
+  z-index: 1;
+  -webkit-transform: skewY(-2deg);
+          transform: skewY(-2deg);
 }
 
 .work-experience .company-years {
@@ -11627,12 +11643,26 @@ ul {
 
 .education {
   background-color: #1b242f;
+  overflow: hidden;
+  padding-bottom: 90px;
 }
 
 .education .company-years {
   background-color: white;
   border: 1px solid white;
   color: #1b242f;
+}
+
+.education::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 90%;
+  -webkit-transform: skewY(2deg);
+          transform: skewY(2deg);
+  background-color: #e3e3e3;
+  z-index: 1;
 }
 
 .work-description {
@@ -11706,6 +11736,13 @@ ul {
   padding: 10px;
 }
 
+.company-name:hover {
+  background-color: white;
+  color: #1b242f;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .add-line {
   background-color: #1b242f;
   height: 65px;
@@ -11732,8 +11769,8 @@ ul {
   width: 96%;
 }
 
-.add-line1 {
-  background-color: #1b242f;
+.add-line-photo {
+  background-color: white;
   height: 50px;
   margin-top: 50px;
   -webkit-transform: skewY(3deg);
@@ -11748,6 +11785,8 @@ ul {
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
+  padding-top: 90px;
+  overflow: hidden;
 }
 
 .skills li {
@@ -11761,6 +11800,24 @@ ul {
 .skills .skill-progress {
   height: 25px;
   background-color: #E3E3E3;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 90%;
+  background-color: #e3e3e3;
+  -webkit-transform: skewY(2deg);
+          transform: skewY(2deg);
+  z-index: 1;
+}
+
+.skills .skill-progress-bar:hover .skill-progress {
+  background-color: #1b242f;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 img {
@@ -12040,6 +12097,8 @@ footer .social-buttons i {
 
 footer .social-buttons i:hover {
   color: #1b242f;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 footer li {
@@ -12099,10 +12158,14 @@ footer .hire-me a {
 
 footer .hire-me a:hover {
   text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 footer .hire-me:hover {
   background-color: #1b242f;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 footer .social-buttons,

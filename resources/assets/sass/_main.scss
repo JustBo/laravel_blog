@@ -137,9 +137,24 @@ ul{
   }
 }
 .work-experience{
+  &::before{
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -90%;
+    right: 0;
+    background-color: #e3e3e3;
+    z-index: 1;
+    transform: skewY(-2deg);
+  }
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;
+  background-attachment: fixed;
+  padding-top:100px;
+  overflow: hidden;
   .company-years{
     background-color: $common-color;
     border:1px solid $common-color;
@@ -147,10 +162,22 @@ ul{
 }
 .education{
   background-color:$common-color;
+  overflow: hidden;
+  padding-bottom: 90px;
   .company-years{
     background-color: white;
     border:1px solid white;
     color: $common-color;
+  }
+  &::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:90%;
+    transform: skewY(2deg);
+    background-color: #e3e3e3;
+    z-index:1;
   }
 }
 .work-description{
@@ -212,6 +239,11 @@ ul{
   border:1px solid rgb(18, 19, 21);
   display: inline-block;
   padding: 10px;
+  &:hover{
+    background-color: white;
+    color: $common-color;
+    transition: 0.3s;
+  }
 }
 .add-line{
   background-color: $common-color;
@@ -237,8 +269,8 @@ ul{
   }
 }
 
-.add-line1{
-  background-color: $common-color;
+.add-line-photo{
+  background-color: white;
   height: 50px;
   margin-top: 50px;
   transform: skewY(3deg);
@@ -252,6 +284,8 @@ ul{
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
+  padding-top: 90px;
+  overflow: hidden;
   li{
     padding:10px 0;
   }
@@ -261,6 +295,20 @@ ul{
   .skill-progress{
     height:25px;
     background-color:#E3E3E3;
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:100%;
+    bottom: 90%;
+    background-color:#e3e3e3;
+    transform: skewY(2deg);
+    z-index:1;
+  }
+  .skill-progress-bar:hover .skill-progress{
+    background-color:$common-color;
+    transition: 0.2s;
   }
 }
 img{

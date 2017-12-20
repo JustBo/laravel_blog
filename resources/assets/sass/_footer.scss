@@ -9,6 +9,7 @@ footer{
     color:white;
     &:hover{
       color:$common-color;
+      transition: 0.3s;
     }
   }
   li{
@@ -50,10 +51,12 @@ footer{
       padding: 4px 10px;
       &:hover{
         text-decoration: none;
+        transition: 0.3s;
       }
     }
     &:hover{
       background-color: $common-color;
+      transition: 0.3s;
     }
   }
   .social-buttons,

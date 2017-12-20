@@ -60,7 +60,7 @@
                   </div>
                 @else
                   <div class="company-name">
-                    {{ $experience->place }} {{ $loop->depth }}
+                    {{ $experience->place }}
                   </div>
                   <div class="work-description">
                     {{ $experience->description }}
@@ -72,7 +72,7 @@
               <div class="">
                 @if ( $loop->index % 2 == 0 )
                   <div class="company-name">
-                    {{ $experience->place }} {{ $loop->depth }}
+                    {{ $experience->place }}
                   </div>
                   <div class="work-description">
                     {{ $experience->description }}
@@ -108,7 +108,7 @@
                     </div>
                   @else
                     <div class="company-name">
-                      {{ $education->place }} {{ $loop->depth }}
+                      {{ $education->place }}
                     </div>
                     <div class="work-description">
                       {{ $education->description }}
@@ -138,7 +138,6 @@
       </div>
     </div>
   </section>
-  <div class="add-line"></div>
 
   <section class="section latest-projects">
     <h1>latest projects</h1>
