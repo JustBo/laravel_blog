@@ -31684,8 +31684,13 @@ __webpack_require__(35);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth__ = __webpack_require__(56);
 
 
+
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_1__auth__["a" /* auth */]);
 
 /***/ }),
 /* 36 */
@@ -31744,6 +31749,82 @@ var navbar = new Navbar();
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return auth; });
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Auth = function () {
+  function Auth() {
+    _classCallCheck(this, Auth);
+
+    this.loginForm = $('#loginform');
+    this.registerForm = $('#registerform');
+    this.setSubmitEvents();
+  }
+
+  _createClass(Auth, [{
+    key: 'setSubmitEvents',
+    value: function setSubmitEvents() {
+      this.loginForm.on('submit', this.loginCallback);
+      this.registerForm.on('submit', this.registerCallback);
+    }
+  }, {
+    key: 'loginCallback',
+    value: function loginCallback(e) {
+      e.preventDefault();
+      console.log(axios);
+      var instance = axios.create({
+        headers: {
+          'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+      instance.post('/login', {
+        firstName: 'Fred',
+        lastName: 'Flintstone'
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: 'registerCallback',
+    value: function registerCallback(e) {
+      e.preventDefault();
+      console.log(e);
+    }
+  }]);
+
+  return Auth;
+}();
+
+var auth = new Auth();
+
+
 
 /***/ })
 /******/ ]);

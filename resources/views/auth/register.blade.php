@@ -1,7 +1,5 @@
     <div class="panel-heading text-center">Register</div>
-    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-        {{ csrf_field() }}
-
+    <form id="registerform" class="form-horizontal" method="POST" action="{{ route('register') }}">
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
             <div class="col-md-12">
                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name" required>
