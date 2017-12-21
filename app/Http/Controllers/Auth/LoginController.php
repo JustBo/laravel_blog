@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use App\Http\Requests\LoginRequest;
+use Validator;
 
 class LoginController extends Controller
 {
@@ -51,9 +52,23 @@ class LoginController extends Controller
         Auth::guard('web')->logout();
         return redirect('/');
     }
-
-    public function postLogin(LoginRequest $request)
+    /**
+     * login through ajax
+     * @param  Request $request
+     * @return Json Response
+     */
+    public function postLogin(Request $request)
     {
+      $validation = Validator::make($request->all(),[
+        'email' => 'required|email',
+        'password' => 'required'
+      ]);
+        if ($validation->fails())  {
+            return response()->json([
+              'message' => $validation->errors()->toArray(),
+              'status' => 400
+            ], 200);
+        }
         if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
             return response()
                 ->json([
@@ -63,7 +78,7 @@ class LoginController extends Controller
         } else {
             return response()
                 ->json([
-                    'message' => 'Incorrect Credentials',
+                    'message' => [['Wrong E-mail & Password']],
                     'status' => 400
                 ], 200);
         }

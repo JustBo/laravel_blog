@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -69,4 +71,29 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    /**
+     * Register through ajax
+     * @param  Request $request
+     * @return Json Response
+     */
+    public function postRegister(Request $request)
+    {
+      $validation = $this->validator($request->input());
+      if ($validation->fails()) {
+          return response()->json([
+            'message' => $validation->errors()->toArray(),
+            'status' => 400
+          ], 200);
+      }else{
+        // create user
+        $user = $this->create($request->all());
+        // login user
+        Auth::login($user);
+        return response()->json([
+          'message' => 'Success',
+          'status' => 200
+        ], 200);
+      }
+    }
+
 }

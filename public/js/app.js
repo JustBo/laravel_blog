@@ -17871,9 +17871,9 @@ if (token) {
 
     // Define as an anonymous module so, through path mapping, it can be
     // referenced as the "underscore" module.
-    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
       return _;
-    }).call(exports, __webpack_require__, exports, module),
+    }.call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
@@ -28163,9 +28163,9 @@ jQuery.nodeName = nodeName;
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
 if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
 		return jQuery;
-	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
@@ -31658,8 +31658,8 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(34);
-__webpack_require__(38);
-module.exports = __webpack_require__(39);
+__webpack_require__(37);
+module.exports = __webpack_require__(38);
 
 
 /***/ }),
@@ -31684,13 +31684,11 @@ __webpack_require__(35);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navbar__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth__ = __webpack_require__(56);
 
 
 
 
-
-console.log(__WEBPACK_IMPORTED_MODULE_1__auth__["a" /* auth */]);
 
 /***/ }),
 /* 36 */
@@ -31740,10 +31738,39 @@ var navbar = new Navbar();
 
 /***/ }),
 /* 37 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return auth; });
+/* unused harmony export auth */
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31767,17 +31794,22 @@ var Auth = function () {
     key: 'loginCallback',
     value: function loginCallback(e) {
       e.preventDefault();
-      console.log(axios);
-      var instance = axios.create({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-      });
-      instance.post('/login', {
+      axios.post('/login', {
         email: $('#email').val(),
         password: $('#password').val()
       }).then(function (response) {
-        console.log(response);
+        if (response.data.status == '200') {
+          window.location.reload();
+        } else {
+          var messages = response.data.message;
+          var errorsArray = [];
+          for (var prop in messages) {
+            for (var msg in messages[prop]) {
+              errorsArray.push(messages[prop][msg]);
+            }
+          }
+          $('.login-error').html(errorsArray.join('<br>'));
+        }
       }).catch(function (error) {
         console.log(error);
       });
@@ -31786,7 +31818,28 @@ var Auth = function () {
     key: 'registerCallback',
     value: function registerCallback(e) {
       e.preventDefault();
-      console.log(e);
+      axios.post('/register', {
+        name: $('#name').val(),
+        email: $('#register').val(),
+        password: $('#password-register').val(),
+        password_confirmation: $('#password-confirm').val()
+      }).then(function (response) {
+        console.log(response);
+        if (response.data.status == '200') {
+          window.location.reload();
+        } else {
+          var messages = response.data.message;
+          var errorsArray = [];
+          for (var prop in messages) {
+            for (var msg in messages[prop]) {
+              errorsArray.push(messages[prop][msg]);
+            }
+          }
+          $('.register-error').html(errorsArray.join('<br>'));
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
     }
   }]);
 
@@ -31796,18 +31849,6 @@ var Auth = function () {
 var auth = new Auth();
 
 
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

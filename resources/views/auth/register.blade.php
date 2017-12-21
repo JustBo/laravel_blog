@@ -1,5 +1,5 @@
     <div class="panel-heading text-center">Register</div>
-    <form id="registerform" class="form-horizontal" method="POST" action="{{ route('register') }}">
+    <form id="registerform" class="form-horizontal" method="POST" action="{{ route('api.register') }}">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
             <div class="col-md-12">
@@ -41,7 +41,11 @@
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
             </div>
         </div>
+        <div>
+          <span class="errors register-error help-block">
 
+          </span>
+        </div>
         <div class="form-group text-center">
             <div class="col-md-12">
               <button type="submit" class="btn login-btn register-btn">

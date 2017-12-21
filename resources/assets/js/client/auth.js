@@ -13,18 +13,23 @@ class Auth{
 
   loginCallback(e){
     e.preventDefault();
-    console.log(axios);
-    var instance = axios.create({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
-    instance.post('/login', {
+    axios.post('/login', {
       email: $('#email').val(),
       password: $('#password').val()
     })
     .then(function (response) {
-      console.log(response);
+      if( response.data.status == '200' ){
+        window.location.reload();
+      }else{
+        var messages = response.data.message;
+        var errorsArray = [];
+        for( var prop in messages ){
+          for( let msg in messages[prop]){
+            errorsArray.push(messages[prop][msg]);
+          }
+        }
+        $('.login-error').html(errorsArray.join('<br>'));
+      }
     })
     .catch(function (error) {
       console.log(error);
@@ -33,7 +38,30 @@ class Auth{
 
   registerCallback(e){
     e.preventDefault();
-    console.log(e);
+    axios.post('/register', {
+      name: $('#name').val(),
+      email: $('#register').val(),
+      password: $('#password-register').val(),
+      password_confirmation: $('#password-confirm').val()
+    })
+    .then(function (response) {
+      console.log(response);
+      if( response.data.status == '200' ){
+        window.location.reload();
+      }else{
+        var messages = response.data.message;
+        var errorsArray = [];
+        for( var prop in messages ){
+          for( let msg in messages[prop]){
+            errorsArray.push(messages[prop][msg]);
+          }
+        }
+        $('.register-error').html(errorsArray.join('<br>'));
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
 }

@@ -12276,3 +12276,13 @@ footer .contact-mail {
   font-weight: bold;
 }
 
+.modal-open .errors {
+  width: 80%;
+  color: #f27373;
+  margin: 0 auto;
+}
+
+.modal-open .login-btn:focus {
+  color: white;
+}
+
