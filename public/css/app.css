@@ -12203,8 +12203,11 @@ footer .contact-mail {
 
 .modal-open #loginmodal .modal-dialog,
 .modal-open #registermodal .modal-dialog {
-  -webkit-transform: translate(0, 100%);
-          transform: translate(0, 100%);
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
   background-color: rgba(27, 35, 47, 0.45);
   color: white;
 }

@@ -6,7 +6,10 @@
     // justify-content: center;
     //
     .modal-dialog{
-      transform: translate(0, 100%);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
       background-color: rgba(27, 35, 47, 0.45);
       color:white;
     }
