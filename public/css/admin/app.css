@@ -11602,3 +11602,29 @@ ul {
   height: 45px;
 }
 
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  color: #fff;
+  background-color: #1b242f;
+  border-color: #1b242f;
+  cursor: default;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #1b242f;
+}
+
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus {
+  color: white;
+  background-color: #1b242f;
+  border-color: #1b242f;
+}
+

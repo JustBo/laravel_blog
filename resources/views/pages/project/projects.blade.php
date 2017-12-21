@@ -34,6 +34,7 @@
           </div>
         </div>
       @endforeach
+      {{ $projects->links() }}
     </div>
   </div>
 @endsection

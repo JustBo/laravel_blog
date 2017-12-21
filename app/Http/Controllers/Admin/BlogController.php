@@ -18,7 +18,9 @@ class BlogController extends Controller
    */
   public function index()
   {
-    $blogs = Blog::with('categories')->get();
+    $blogs = Blog::with('categories')
+                  ->latest()
+                  ->paginate(7);
     return view('admin.blog.blogs', compact('blogs'));
   }
   /**

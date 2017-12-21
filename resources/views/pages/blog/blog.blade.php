@@ -35,6 +35,7 @@
           </div>
         </div>
       @endforeach
+      {{ $blogs->links() }}
     </div>
   </div>
 

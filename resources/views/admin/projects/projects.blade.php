@@ -50,6 +50,7 @@
       </a>
    @endforeach
  </div>
+ {{ $projects->links() }}
  <div class="add-new-btn">
    <a href="{{ route('admin.projects.create') }}" class="btn btn-primary pull-right">
      Add new

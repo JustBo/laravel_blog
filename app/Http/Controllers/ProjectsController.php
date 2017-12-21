@@ -16,7 +16,10 @@ class ProjectsController extends Controller
    */
   public function index()
   {
-    $projects = Project::with(['categories'])->where('active', 1)->get();
+    $projects = Project::with(['categories'])
+                        ->where('active', 1)
+                        ->latest()
+                        ->paginate(7);
     $categories = Category::whereHas('projects', function($q){
       $q->where('active', 1);
     })->get();

@@ -50,6 +50,7 @@
       </a>
    @endforeach
  </div>
+ {{ $blogs->links() }}
  <div class="add-new-btn">
    <a href="{{ route('admin.blog.create') }}" class="btn btn-primary pull-right">
      Add new
