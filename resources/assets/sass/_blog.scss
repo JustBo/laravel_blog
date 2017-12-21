@@ -32,12 +32,17 @@
     margin: 15px 0;
     li{
       display:inline-block;
-      padding:10px;
       cursor: pointer;
       text-transform: capitalize;
+    }
+    a{
+      display:block;
+      color: $common-color;
+      padding:10px;
       &:hover{
         background-color: $common-color;
         color:white;
+        text-decoration:none;
       }
     }
   }

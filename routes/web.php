@@ -25,9 +25,11 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/projects', 'ProjectsController@index')->name('projects');
+Route::get('/projects/category/{category}', 'ProjectsController@specific_category')->name('project.category');
 Route::get('/projects/{id}', 'ProjectsController@details')->name('project.details');
 
 Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog/category/{category}', 'BlogController@specific_category')->name('blog.category');
 Route::get('/blog/{id}', 'BlogController@details')->name('blog.details');
 Route::post('/blog/{id}', 'BlogController@store_comment')->name('blog.store_comment');
 Route::delete('/blog/{id}', 'BlogController@destroy_comment')->name('blog.destroy_comment');

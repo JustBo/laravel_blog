@@ -52,6 +52,27 @@ class BlogController extends Controller
     return redirect()->route('blog.details', ['id' => $id]);
   }
   /**
+   * Show posts for specific_category.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function specific_category($category)
+  {
+    $blogs = Blog::with(['categories', 'comments'])
+                    ->where('active', 1)
+                    ->whereHas('categories', function($q) use ($category){
+                      $q->where('id', $category);
+                    })->latest()
+                    ->paginate(6);
+    if( $blogs->isEmpty() ){
+      abort(404);
+    }
+    $categories = Category::whereHas('blogs', function($q){
+      $q->where('active', 1);
+    })->get();
+    return view('pages.blog.blog', compact('blogs', 'categories'));
+  }
+  /**
    * Remove comment.
    *
    * @param  int  $id

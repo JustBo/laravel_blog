@@ -6,7 +6,11 @@
       <div class="category-list text-center">
         <ul>
           @foreach ($categories as $key => $category)
-            <li data-id="{{ $category->id }}">{{ $category->name }}</li>
+            <li data-id="{{ $category->id }}">
+              <a href="{{ route('project.category', ['category' => $category->id]) }}">
+                {{ $category->name }}
+              </a>
+            </li>
           @endforeach
         </ul>
       </div>

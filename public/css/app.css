@@ -11897,15 +11897,22 @@ img {
 .blog-inner .category-list li,
 .project-inner .category-list li {
   display: inline-block;
-  padding: 10px;
   cursor: pointer;
   text-transform: capitalize;
 }
 
-.blog-inner .category-list li:hover,
-.project-inner .category-list li:hover {
+.blog-inner .category-list a,
+.project-inner .category-list a {
+  display: block;
+  color: #1b242f;
+  padding: 10px;
+}
+
+.blog-inner .category-list a:hover,
+.project-inner .category-list a:hover {
   background-color: #1b242f;
   color: white;
+  text-decoration: none;
 }
 
 .blog-inner .post,
